@@ -2,6 +2,8 @@ import axios from "axios";
 import "./style/Board.scss";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
   const navigate = useNavigate();
@@ -53,14 +55,12 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
           className="BoardListbutton"
           onClick={() => {
             registerd();
-          }}
-        >
+          }}>
           + 글 쓰기
         </button>
       </div>
       <div className="BoardTitel">
         <table class="tbl_type">
-          <caption>게시판 리스트</caption>
           <thead>
             <tr className="BoardTr">
               <th scope="col">번호</th>
@@ -75,6 +75,7 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
               <tr key={data.id}>
                 <td> {data.id}</td>
                 <td>
+                  {data.subject}
                   <a
                     href={
                       "/Board/" +
@@ -83,8 +84,7 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
                       mcategory +
                       "/detail/" +
                       data.id
-                    }
-                  >
+                    }>
                     {data.subject}
                   </a>
                 </td>
@@ -95,6 +95,26 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="CoinEndDiv1">
+        <div className="CoinEndDiv2">
+          <a href="">
+            <ChevronLeftIcon />
+            &nbsp;
+          </a>
+
+          <a href="">1</a>
+
+          <a href="">2</a>
+
+          <a href="">3</a>
+
+          <a href="">4</a>
+          <a href="">5</a>
+          <a href="">
+            <ChevronRightIcon />
+          </a>
+        </div>
       </div>
     </div>
   );

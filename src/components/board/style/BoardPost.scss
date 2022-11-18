@@ -1,16 +1,23 @@
 .select-MainDiv {
-  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-  margin: 40px;
-  padding: 50px;
-  .con {
+  a {
     h1 {
-      font-size: 25px;
-      font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      font-size: 19px;
+      font-weight: 900;
+      .icon {
+        color: #c8c9ca;
+      }
     }
-    .article-write {
-      font-size: 17px;
-    }
+  }
+  .con {
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 10px 10px 10px;
+    margin-bottom: 30px;
+    background-color: white;
+    height: 750px;
+    max-height: 1000px;
+    padding: 30px;
   }
 }
 
@@ -23,6 +30,9 @@
   height: 40px;
   width: 100%;
   font-size: 18px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 20px 0px 20px 20px;
+  border: 1px solid #dee2e6;
 }
 .write-mimee {
   display: inline;
@@ -43,11 +53,40 @@
   margin: 0px;
 }
 .Write_button1 {
-  margin-right: 30px;
   font-weight: bold;
+
+  color: white;
+  font-size: 14px;
+  background-color: #9a62e6;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: center;
+  outline: none;
+  margin-left: 10px;
+  border-radius: 0.4rem;
 }
 .Write_button2 {
   font-weight: bold;
+  color: black;
+  border: 1px solid #d4d4d8;
+  font-size: 14px;
+  background-color: aqua;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: center;
+  outline: none;
+
+  border-radius: 0.4rem;
 }
 .write_list {
   display: flex;
@@ -57,4 +96,9 @@
   text-align: start;
   margin-left: 50px;
   color: red;
+}
+.filebox {
+  input {
+    border: none;
+  }
 }
