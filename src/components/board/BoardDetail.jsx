@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style/BoardDetail.scss";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const BoardDetail = ({ lcategory, mcategory, boardList }) => {
   const { boardid } = useParams();
@@ -12,6 +13,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
   const [comment, setComment] = useState("");
   // 댓글 리스트
   const [comList, setComList] = useState([]);
+  const [boardtext, setBoardText] = useState([]);
   boardList.sort(function (a, b) {
     return b.id - a.id;
   });
@@ -138,102 +140,110 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
   return (
     <div className="DetailPage">
       <div className="DetailPageMain">
-        <span className="DetailPageTitle">{boardDetail.subject} </span>
-      </div>
-      <div className="DetailPagelist">
-        <div className="DetailPagelistdiv">
-          <span>작성자:</span>
-          <span>{boardDetail.author}</span>
-          <span>날짜:</span>
-          <span>{boardDetail.date}</span>
-          <div className="asddgiuhi23">
-            {aaa ? (
-              <>
-                <a
-                  href={
-                    "/Board/" +
-                    lcategory +
-                    "/" +
-                    mcategory +
-                    "/update/" +
-                    boardDetail.id
-                  }
-                >
-                  수정
-                </a>
-                <button
-                  className="DetailPageButton2"
-                  onClick={() => {
-                    deleteList();
-                  }}
-                >
-                  삭제
-                </button>
-              </>
-            ) : (
-              <></>
-            )}
+        <div className="DetailPageMain">
+          <span className="DetailPageTitle">{boardDetail.subject} </span>
+        </div>
+        <div className="DetailPagelist">
+          <div className="DetailPagelistdiv">
+            <span>{boardDetail.author}</span>
+
+            <div className="asddgiuhi23">
+              <span>{boardDetail.date}</span>
+              <span>조회수 : </span>
+              <span>{boardDetail.views}</span>
+
+              {aaa ? (
+                <>
+                  <div className="Deletebuttonor">
+                    <a
+                      href={
+                        "/Board/" +
+                        lcategory +
+                        "/" +
+                        mcategory +
+                        "/update/" +
+                        boardDetail.id
+                      }>
+                      수정
+                    </a>
+                    <button
+                      className="DetailPageButton2"
+                      onClick={() => {
+                        deleteList();
+                      }}>
+                      삭제
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      <hr className="DetailPageHr" />
-      <div className="DetailPage_List_cjah_div">
-        <div className="DetailPage_List_cjah">{boardDetail.contents}</div>
-      </div>
-      <div className="DetailPageButton"></div>
 
-      <div className="DetailPage_Booot">
-        <div className="DetailPage_BoootMaindiv">
-          <div>댓글</div>
+        <div className="DetailPage_List_cjah_div">
+          <div className="DetailPage_List_cjah">{boardDetail.contents}</div>
         </div>
-        <hr className="DetailPageHr" />
-        <tbody className="DetailPage_BoootList">
-          {comList.map((list) => (
-            <tr className="DetailPageTd" key={list.id}>
-              <td className="trdiv1">{list.author}</td>
-
-              <td className="trdiv2">{list.date}</td>
-
-              <td className="trdiv3">{list.contents} </td>
-              <td className="trdiv4">
-                {bbb(list.author) ? (
-                  <>
-                    <button
-                      onClick={() => {
-                        comdelete(list.id);
-                      }}
-                    >
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </button>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
+      </div>{" "}
+      <div className="sdsdaw4efr34">
+        <ArrowBackIcon className="icon" /> &nbsp; 목록으로
       </div>
-      <hr className="DetailPageHr" />
-      <div className="DetailPage-div">
-        <input
-          className="DetailPage-mimee"
-          type="text"
-          value={comment}
-          onChange={(e) => {
-            setComment(e.target.value);
-          }}
-        />
-
-        <button
-          className="DetailPage_button1"
-          onClick={() => {
-            compost();
-          }}
-        >
-          작성 하기
-        </button>
+      <div className="DetailPageList1">
+        <div className="DetailPage_Booot">
+          <div className="DetailPage_BoootMaindiv">
+            <div>댓글</div>
+          </div>
+          <hr className="DetailPageHr" />
+          <tbody className="DetailPage_BoootList">
+            {comList.map((list) => (
+              <tr className="DetailPageTd" key={list.id}>
+                <div className="DetailPageTd_Span1">
+                  <span>{list.author} &nbsp;</span>
+                  <span>{list.date}</span>
+                </div>
+                <div className="DetailPageTddiv">
+                  <div>{list.contents} </div>
+                  <div>
+                    {bbb(list.author) ? (
+                      <>
+                        <button
+                          onClick={() => {
+                            comdelete(list.id);
+                          }}>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </button>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
+              </tr>
+            ))}
+          </tbody>
+          <div className="DetailPage-div">
+            <input
+              className="DetailPage-mimee"
+              type="text"
+              value={comment}
+              onChange={(e) => {
+                setComment(e.target.value);
+              }}
+            />
+          </div>
+          <div className="DetailPageButtonend">
+            {" "}
+            <button
+              className="DetailPage_button1"
+              onClick={() => {
+                compost();
+              }}>
+              등록
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

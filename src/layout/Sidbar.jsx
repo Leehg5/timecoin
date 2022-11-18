@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import "./Layout.scss";
 
 const Sidbar = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -8,9 +9,9 @@ const Sidbar = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [kospi, setKospi] = useState("");
+  const [kosdaq, setKosdaq] = useState("");
   const [boardList, setBoardList] = useState([]);
   const [samsung, setSamsung] = useState("");
-  const [kosdaq, setKosdaq] = useState("");
   const [kakao, setKakao] = useState("");
 
   const fetchUsers = async () => {
@@ -31,11 +32,6 @@ const Sidbar = () => {
         "http://localhost:7999/chart/Market/get?name=코스피"
       );
       setKospi(kospiGet.data);
-
-      const kosdaqGet = await axios.get(
-        "http://localhost:7999/chart/Market/get?name=코스닥"
-      );
-      setKosdaq(kosdaqGet.data);
 
       const samsungGet = await axios.get(
         "http://localhost:7999/chart/Stock/get?name=삼성전자"
@@ -76,6 +72,7 @@ const Sidbar = () => {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
   return (
     <div class="Sidbar">
       <div className="Sidbarss">
@@ -119,13 +116,23 @@ const Sidbar = () => {
                     </span>
                   </div>
                   <div>
-                    <span class="span_high">
+                    <span
+                      style={
+                        test[0].signed_change_price > 0
+                          ? { color: "red" }
+                          : { color: "blue" }
+                      }>
                       {test[0].signed_change_price
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
                       원{" "}
                     </span>
-                    <span class="span_low">
+                    <span
+                      style={
+                        test[0].signed_change_rate > 0
+                          ? { color: "red" }
+                          : { color: "blue" }
+                      }>
                       {" "}
                       {(test[0].signed_change_rate.toFixed(3) * 100).toFixed(
                         2
@@ -158,13 +165,23 @@ const Sidbar = () => {
                       </span>
                     </div>
                     <div>
-                      <span class="span_high">
+                      <span
+                        style={
+                          test[1].signed_change_price > 0
+                            ? { color: "red" }
+                            : { color: "blue" }
+                        }>
                         {test[1].signed_change_price
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
                         원{" "}
                       </span>
-                      <span class="span_low">
+                      <span
+                        style={
+                          test[1].signed_change_rate > 0
+                            ? { color: "red" }
+                            : { color: "blue" }
+                        }>
                         {" "}
                         {(test[1].signed_change_rate.toFixed(3) * 100).toFixed(
                           2
@@ -195,13 +212,23 @@ const Sidbar = () => {
                     </span>
                   </div>
                   <div>
-                    <span class="span_high">
+                    <span
+                      style={
+                        test[2].signed_change_price > 0
+                          ? { color: "red" }
+                          : { color: "blue" }
+                      }>
                       {test[2].signed_change_price
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
                       원{" "}
                     </span>
-                    <span class="span_low">
+                    <span
+                      style={
+                        test[2].signed_change_rate > 0
+                          ? { color: "red" }
+                          : { color: "blue" }
+                      }>
                       {" "}
                       {(test[2].signed_change_rate.toFixed(3) * 100).toFixed(
                         2

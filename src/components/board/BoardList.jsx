@@ -1,11 +1,13 @@
 import axios from "axios";
 import "./style/Board.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Posts from "./posts/Posts";
+import Pagination from "./posts/Pagination";
 
 const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
+  const [limit, setLimit] = useState(20); // 한 페이지당 보여줄 리스트
+  const [page, setPage] = useState(1); // 현재 페이지
   const navigate = useNavigate();
   boardList.sort(function (a, b) {
     return b.id - a.id;
@@ -70,12 +72,11 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
               <th scope="col">조회수</th>
             </tr>
           </thead>
-          <tbody className="BoardTbody">
+          {/* <tbody className="BoardTbody">
             {boardList.map((data) => (
               <tr key={data.id}>
                 <td> {data.id}</td>
                 <td>
-                  {data.subject}
                   <a
                     href={
                       "/Board/" +
@@ -84,7 +85,8 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
                       mcategory +
                       "/detail/" +
                       data.id
-                    }>
+                    }
+                  >
                     {data.subject}
                   </a>
                 </td>
@@ -93,29 +95,22 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
                 <td> {data.views}</td>
               </tr>
             ))}
-          </tbody>
+          </tbody> */}
+          <Posts
+            boardList={boardList}
+            lcategory={lcategory}
+            mcategory={mcategory}
+            limit={limit}
+            page={page}
+          />
         </table>
       </div>
-      <div className="CoinEndDiv1">
-        <div className="CoinEndDiv2">
-          <a href="">
-            <ChevronLeftIcon />
-            &nbsp;
-          </a>
-
-          <a href="">1</a>
-
-          <a href="">2</a>
-
-          <a href="">3</a>
-
-          <a href="">4</a>
-          <a href="">5</a>
-          <a href="">
-            <ChevronRightIcon />
-          </a>
-        </div>
-      </div>
+      <Pagination
+        total={boardList.length}
+        limit={limit}
+        page={page}
+        setPage={setPage}
+      />
     </div>
   );
 };

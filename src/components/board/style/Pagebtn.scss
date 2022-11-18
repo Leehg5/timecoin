@@ -1,0 +1,35 @@
+.main_btn {
+  text-align: center;
+}
+
+.pre_btn {
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.pre_btn:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.post_btn {
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.post_btn:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.current_btn {
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.current_btn:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+button[aria-current] {
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
