@@ -1,0 +1,31 @@
+.Searchlist {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  margin: 40px;
+  padding: 50px;
+  width: 100%;
+  .Searchlist_Div {
+    .Searchlist_Div1 {
+      .earchlistMain {
+        div:nth-child(1) {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .Searchlist_List {
+          display: flex;
+          padding: auto;
+          div {
+            font-weight: 100;
+            margin-right: 10px;
+            font-size: 15px;
+          }
+        }
+        .Searchlist_Link {
+          font-weight: bold;
+          font-size: 15px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

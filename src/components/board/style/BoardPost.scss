@@ -1,0 +1,60 @@
+.select-MainDiv {
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  margin: 40px;
+  padding: 50px;
+  .con {
+    h1 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .article-write {
+      font-size: 17px;
+    }
+  }
+}
+
+.write_select {
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+.write-title {
+  border: none;
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+}
+.write-mimee {
+  display: inline;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px 10px 20px;
+  vertical-align: top;
+}
+.write-mimee-div {
+  border: 1px solid #d4d4d8;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 100%;
+  height: 500px;
+}
+.Write_button {
+  text-align: end;
+  margin: 0px;
+}
+.Write_button1 {
+  margin-right: 30px;
+  font-weight: bold;
+}
+.Write_button2 {
+  font-weight: bold;
+}
+.write_list {
+  display: flex;
+}
+.write_list_title {
+  width: 100%;
+  text-align: start;
+  margin-left: 50px;
+  color: red;
+}
