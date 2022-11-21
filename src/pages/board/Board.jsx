@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Routes, useParams } from "react-router-dom";
 import BoardList from "../../components/board/BoardList";
-import BoardDetail from "../../components/board/BoardDetail";
 import BoardPost from "../../components/board/BoardPost";
+import BoardDetail from "../../components/board/BoardDetail";
 import BoardUpdate from "../../components/board/BoardUpdate";
 
 const Board = ({ boardList, setBoardList }) => {
   const { lcategory, mcategory } = useParams();
+
   return (
     <>
       <Routes>

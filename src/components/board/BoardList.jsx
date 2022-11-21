@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Posts from "./posts/Posts";
 import Pagination from "./posts/Pagination";
+import { BACK_URL } from "../../config";
 
 const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
   const [limit, setLimit] = useState(20); // 한 페이지당 보여줄 리스트
@@ -32,12 +33,7 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
     const getData = async () => {
       try {
         const data = await axios({
-          url:
-            "http://localhost:7999/board/" +
-            lcategory +
-            "/" +
-            mcategory +
-            "/get",
+          url: `${BACK_URL}` + lcategory + "/" + mcategory + "/get",
           method: "GET",
         });
         setBoardList(data.data);
@@ -57,7 +53,8 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
           className="BoardListbutton"
           onClick={() => {
             registerd();
-          }}>
+          }}
+        >
           + 글 쓰기
         </button>
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style/BoardPost.scss";
 import axios from "axios";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { BACK_URL } from "../../config";
 
 import { useNavigate } from "react-router-dom";
 
@@ -14,12 +15,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
   const post = async () => {
     try {
       const data = await axios({
-        url:
-          "http://localhost:7999/board/" +
-          lcategory +
-          "/" +
-          mcategory +
-          "/post",
+        url: `${BACK_URL}` + lcategory + "/" + mcategory + "/post",
         method: "POST",
         data: {
           subject: subject,
@@ -41,9 +37,8 @@ const BoardPost = ({ lcategory, mcategory }) => {
   const check = sessionStorage.getItem("logined") || false;
   useEffect(() => {
     if (check) {
-      setLonned(sessionStorage.getItem("user"));
+      setAuthor(sessionStorage.getItem("userid"));
     }
-    setAuthor(lonned);
   }, []);
   return (
     <div className="select-MainDiv">
@@ -52,7 +47,8 @@ const BoardPost = ({ lcategory, mcategory }) => {
           type="button"
           onclick={() => {
             navigate(-1);
-          }}>
+          }}
+        >
           <h1>
             <ArrowBackIcon className="icon" />
             &nbsp; 돌아가기
@@ -95,14 +91,16 @@ const BoardPost = ({ lcategory, mcategory }) => {
               type="button"
               onclick={() => {
                 navigate(-1);
-              }}>
+              }}
+            >
               돌아기기
             </button>
             <button
               className="Write_button1"
               onClick={() => {
                 post();
-              }}>
+              }}
+            >
               작성 하기
             </button>
           </div>

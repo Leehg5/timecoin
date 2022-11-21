@@ -21,17 +21,20 @@ const Sidbar = () => {
       setTest(null);
       // loading 상태를 true 로 바꿉니다.
       setLoading(true);
-      const data = await axios.get("http://localhost:7999/board/notice/n/get3");
-      setBoardList(data.data);
-
       const response = await axios.get(
         "https://api.upbit.com/v1/ticker?markets=KRW-BTC%2C%20KRW-ETH%2C%20KRW-XRP"
       );
       setTest(response.data); // 데이터는 response.data 안에 들어있습니다.
+
       const kospiGet = await axios.get(
         "http://localhost:7999/chart/Market/get?name=코스피"
       );
       setKospi(kospiGet.data);
+
+      const kosdaqGet = await axios.get(
+        "http://localhost:7999/chart/Market/get?name=코스닥"
+      );
+      setKosdaq(kosdaqGet.data);
 
       const samsungGet = await axios.get(
         "http://localhost:7999/chart/Stock/get?name=삼성전자"
@@ -46,7 +49,6 @@ const Sidbar = () => {
     }
     setLoading(false);
   };
-
   useEffect(() => {
     fetchUsers();
   }, []);

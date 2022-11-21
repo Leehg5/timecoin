@@ -3,6 +3,7 @@ import "./BoardPost";
 import "./style/BoardDetail.scss";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { BACK_URL } from "../../config";
 
 const BoardUpdate = ({ lcategory, mcategory }) => {
   const { boardid } = useParams();
@@ -16,12 +17,7 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
   const patch = async () => {
     try {
       const data = await axios({
-        url:
-          "http://localhost:7999/board/" +
-          lcategory +
-          "/" +
-          mcategory +
-          "/patch",
+        url: `${BACK_URL}` + lcategory + "/" + mcategory + "/patch",
         method: "PATCH",
         data: {
           subject: subject,
@@ -44,9 +40,8 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
   const check = sessionStorage.getItem("logined") || false;
   useEffect(() => {
     if (check) {
-      setLonned(sessionStorage.getItem("user"));
+      setAuthor(sessionStorage.getItem("userid"));
     }
-    setAuthor(lonned);
   }, []);
 
   useEffect(() => {

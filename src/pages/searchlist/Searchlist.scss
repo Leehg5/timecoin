@@ -1,9 +1,4 @@
 .Searchlist {
-  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-  margin: 40px;
-  padding: 50px;
-  width: 100%;
   .Searchlist_Div {
     .Searchlist_Div1 {
       .earchlistMain {
@@ -28,4 +23,105 @@
       }
     }
   }
+}
+.Searchlist {
+  height: 100%;
+  width: 100%;
+  .Searchlist_div {
+    input {
+      border-color: #cccccc;
+      display: inline-block;
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 18px;
+      margin-right: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      border-radius: 4px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ededed;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      color: black !important;
+    }
+    button {
+      background-color: #7d1fe0;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      text-align: center;
+      padding: 12px 18px;
+      border-radius: 4px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ededed;
+      text-decoration: none !important;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      color: white;
+    }
+  }
+}
+
+.Searchlistssds3 {
+  color: #7d1fe0;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.earchlistMain {
+  div:nth-child(1) {
+    color: #0c43b7;
+    margin-top: 20px;
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  .Searchlist_List {
+    gap: 10px;
+    color: #999 !important;
+    font-size: 12px;
+  }
+  .Searchlist_Link {
+    font-size: 16px;
+  }
+}
+.Searchlisttitlle {
+  font-size: 22px;
+
+  align-items: center;
+}
+.SearchlistHr {
+  border-bottom: 1px solid #e6dfdf;
+  margin-top: 10px;
+}
+
+.Searchlistmide {
+  margin-top: 100px;
+  .Searchlistmide_Div {
+    font-size: 22px;
+    align-items: center;
+  }
+}
+.Searchlistmidelist {
+  div:nth-child(1) {
+    color: #0c43b7;
+    margin-top: 20px;
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  span {
+    color: #999 !important;
+    font-size: 12px;
+  }
+}
+.SearchlistmideHr {
+  border-bottom: 1px solid #e6dfdf;
+  margin-top: 10px;
 }

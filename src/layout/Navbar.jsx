@@ -114,7 +114,8 @@ const Navbar = () => {
               deleteList();
               setDeleteListsd();
               deleteList = { deleteList };
-            }}>
+            }}
+          >
             <Link>
               <ZoomInIcon />
             </Link>
@@ -134,7 +135,8 @@ const Navbar = () => {
                     setLonned(false);
 
                     sessionStorage.clear();
-                  }}>
+                  }}
+                >
                   로그아웃
                 </button>
               </>
@@ -148,7 +150,8 @@ const Navbar = () => {
                     <div class="modal-box relative">
                       <label
                         for="my-modal-1"
-                        class="btn-sm absolute right-6 top-9">
+                        class="btn-sm absolute right-6 top-9"
+                      >
                         ✕
                       </label>
 
@@ -191,8 +194,6 @@ const Navbar = () => {
                               setName(lonned.data.username);
 
                               setId(lonned.data.userId);
-
-                              setId(lonned.data.userName);
                               if (lonned.data.aboolean == true) {
                                 setLonned(lonned.data);
                                 setLonned(lonned.data.aboolean);
@@ -200,8 +201,9 @@ const Navbar = () => {
                                 alert("로그인 성공");
                               } else if (lonned.data.aboolean == false) {
                                 setLonned(lonned.data.userName);
-
-                                alert("빈칸을 확이나세요");
+                                alert(
+                                  "입력하신 정보를 다시한번 확인하여주세요."
+                                );
                               }
                               console.log(lonned);
                               sessionStorage.setItem(
@@ -216,7 +218,8 @@ const Navbar = () => {
                                 "userid",
                                 lonned.data.userId
                               );
-                            }}>
+                            }}
+                          >
                             {" "}
                             로그인{" "}
                           </label>

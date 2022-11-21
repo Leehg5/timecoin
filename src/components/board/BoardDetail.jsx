@@ -3,6 +3,7 @@ import "./style/BoardDetail.scss";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { BACK_URL } from "../../config";
 
 const BoardDetail = ({ lcategory, mcategory, boardList }) => {
   const { boardid } = useParams();
@@ -21,12 +22,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     const getBoardData = async () => {
       try {
         const data = await axios({
-          url:
-            "http://localhost:7999/board/" +
-            lcategory +
-            "/" +
-            mcategory +
-            "/getid",
+          url: `${BACK_URL}` + lcategory + "/" + mcategory + "/getid",
           method: "GET",
           params: {
             id: boardid,
@@ -60,9 +56,9 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     getCommentData();
   }, []);
 
-  const aaa = sessionStorage.getItem("logined") === boardDetail.author;
+  const aaa = sessionStorage.getItem("userid") === boardDetail.author;
 
-  const bbb = (ccc) => sessionStorage.getItem("logined") === ccc;
+  const bbb = (ccc) => sessionStorage.getItem("userid") === ccc;
 
   const deleteList = async () => {
     try {
@@ -102,7 +98,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
           method: "POST",
           data: {
             contents: comment,
-            author: sessionStorage.getItem("logined"),
+            author: sessionStorage.getItem("userid"),
             id: boardid,
           },
         });
@@ -163,14 +159,16 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                         mcategory +
                         "/update/" +
                         boardDetail.id
-                      }>
+                      }
+                    >
                       수정
                     </a>
                     <button
                       className="DetailPageButton2"
                       onClick={() => {
                         deleteList();
-                      }}>
+                      }}
+                    >
                       삭제
                     </button>
                   </div>
@@ -210,7 +208,8 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                         <button
                           onClick={() => {
                             comdelete(list.id);
-                          }}>
+                          }}
+                        >
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </button>
@@ -239,7 +238,8 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
               className="DetailPage_button1"
               onClick={() => {
                 compost();
-              }}>
+              }}
+            >
               등록
             </button>
           </div>

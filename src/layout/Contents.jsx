@@ -4,6 +4,7 @@ import Privacy from "../pages/set/Privacy";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Board from "../pages/board/Board";
+import Searchlist from "../pages/searchlist/Searchlist";
 
 const Contents = () => {
   const [boardList, setBoardList] = useState([]);
@@ -22,8 +23,8 @@ const Contents = () => {
         />
         <Route
           path="/privacy"
-          element={<Privacy userId={userId} setUserId={setUserId} />}
-        ></Route>
+          element={<Privacy userId={userId} setUserId={setUserId} />}></Route>
+        <Route path="/searchlist" element={<Searchlist />}></Route>
       </Routes>
     </div>
   );
