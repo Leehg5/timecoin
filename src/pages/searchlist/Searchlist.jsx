@@ -4,9 +4,13 @@ import "./Searchlist.scss";
 import axios from "axios";
 import ArticleIcon from "@mui/icons-material/Article";
 import ForumIcon from "@mui/icons-material/Forum";
+import Posts from "../../components/board/posts/Posts";
+import Pagination from "../../components/board/posts/Pagination";
 
 const Searchlist = () => {
   const location = useLocation();
+  const [limit, setLimit] = useState(20); // 한 페이지당 보여줄 리스트
+  const [page, setPage] = useState(1); // 현재 페이지
 
   const [lonned, setLonned] = useState(false);
   const [userId, setUserId] = useState();
@@ -41,7 +45,9 @@ const Searchlist = () => {
       setUserId(sessionStorage.getItem("userid"));
     }
   }, []);
-
+  location.state.test.sort(function (a, b) {
+    return b.id - a.id;
+  });
   return (
     <div className="Searchlist">
       <div className="Searchlist_div">
@@ -106,6 +112,13 @@ const Searchlist = () => {
         </div>
         <hr className="SearchlistmideHr" />
       </div>
+      <Posts boardList={location.state.test} limit={limit} page={page} />
+      <Pagination
+        total={location.state.test.length}
+        limit={limit}
+        page={page}
+        setPage={setPage}
+      />
     </div>
   );
 };

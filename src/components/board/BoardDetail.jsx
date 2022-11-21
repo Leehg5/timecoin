@@ -107,7 +107,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
           alert("댓글 작성 완료");
           window.location.reload();
         } else if (data.data === false) {
-          alert("댓글 작성 실패");
+          alert("관리자가 아닙니다.");
         }
       } catch (e) {
         console.log(e);
@@ -159,16 +159,14 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                         mcategory +
                         "/update/" +
                         boardDetail.id
-                      }
-                    >
+                      }>
                       수정
                     </a>
                     <button
                       className="DetailPageButton2"
                       onClick={() => {
                         deleteList();
-                      }}
-                    >
+                      }}>
                       삭제
                     </button>
                   </div>
@@ -208,8 +206,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                         <button
                           onClick={() => {
                             comdelete(list.id);
-                          }}
-                        >
+                          }}>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </button>
@@ -238,8 +235,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
               className="DetailPage_button1"
               onClick={() => {
                 compost();
-              }}
-            >
+              }}>
               등록
             </button>
           </div>

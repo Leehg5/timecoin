@@ -21,21 +21,22 @@ const Sidbar = () => {
       setTest(null);
       // loading 상태를 true 로 바꿉니다.
       setLoading(true);
+      const data = await axios.get("http://localhost:7999/board/notice/n/get3");
+      setBoardList(data.data);
+
       const response = await axios.get(
         "https://api.upbit.com/v1/ticker?markets=KRW-BTC%2C%20KRW-ETH%2C%20KRW-XRP"
       );
       setTest(response.data); // 데이터는 response.data 안에 들어있습니다.
-
       const kospiGet = await axios.get(
         "http://localhost:7999/chart/Market/get?name=코스피"
       );
-      setKospi(kospiGet.data);
 
+      setKospi(kospiGet.data);
       const kosdaqGet = await axios.get(
         "http://localhost:7999/chart/Market/get?name=코스닥"
       );
       setKosdaq(kosdaqGet.data);
-
       const samsungGet = await axios.get(
         "http://localhost:7999/chart/Stock/get?name=삼성전자"
       );
@@ -49,6 +50,7 @@ const Sidbar = () => {
     }
     setLoading(false);
   };
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -404,12 +406,24 @@ const Sidbar = () => {
         <img src="https://i.postimg.cc/52YsHxHG/banner-android.png" />
       </div>
       <div className="SidbarNotice">
-        <a href="/Board/notice/n">공지 사항</a>
+        <div>
+          <a href="/Board/notice/n">공지 사항</a>
+        </div>
         {boardList.map((data) => (
-          <a href={"/Board/notice/n/detail/" + data.id}>{data.subject}</a>
+          <div>
+            <a href={"/Board/notice/n/detail/" + data.id}>
+              <span className="Sidbarbannerlists">공지</span>
+              {data.subject}
+            </a>
+          </div>
         ))}
-        <a href="/Board/notice/e">패치 노트</a>
-        <a href="/Board/notice/i">문의 / 건의</a>
+        <div>
+          <a href="/Board/notice/e">패치 노트</a>
+        </div>
+        <div>
+          {" "}
+          <a href="/Board/notice/i">문의 / 건의</a>
+        </div>
       </div>
       <div className="advertisement">
         <img

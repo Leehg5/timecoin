@@ -57,13 +57,13 @@
       margin-bottom: 30px;
       background-color: white;
       width: 49%;
-      height: 282px;
+      height: 280px;
       .Homemiddrspan {
         width: 100%;
         font-weight: 900;
         border-bottom: 1px solid rgb(231, 231, 229);
 
-        padding: 6px 00px 17px 20px;
+        padding: 6px 00px 16px 20px;
         span:nth-child(1) {
           margin-right: 10px;
           font-size: 13px;
@@ -200,15 +200,15 @@
     width: 49%;
     height: 280px;
     .Homemiddrspan {
-      width: 100%;
-      font-weight: 900;
+      padding: 5px 00px 17px 20px;
+      font-weight: bold;
       border-bottom: 1px solid rgb(231, 231, 229);
 
-      padding: 6px 00px 17px 20px;
+      padding: 6px 00px 16px 20px;
       span:nth-child(1) {
         margin-right: 10px;
         font-size: 13px;
-        font-weight: 900;
+        font-weight: bold;
         color: #9a62e6;
       }
       span:nth-child(2) {
@@ -219,20 +219,8 @@
     }
     .Homecoinss {
       border-bottom: 1px solid rgb(231, 231, 229);
-      font-weight: 900;
+      font-weight: bold;
       padding: 10px 0px 10px 20px;
     }
-  }
-}
-.SidbarNotice {
-  border: 1px solid red;
-  a:nth-child(1) {
-    border: 1px solid blue;
-  }
-  a:nth-child(2) {
-    border: 1px solid blue;
-  }
-  a:nth-child(3) {
-    border: 1px solid blue;
   }
 }

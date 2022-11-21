@@ -27,7 +27,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
         alert("작성완료");
         navigate(-1);
       } else if (data.data === false) {
-        alert("실패");
+        alert("관리자가 아닙니다.");
       }
     } catch (e) {
       console.log(e);
@@ -47,8 +47,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
           type="button"
           onclick={() => {
             navigate(-1);
-          }}
-        >
+          }}>
           <h1>
             <ArrowBackIcon className="icon" />
             &nbsp; 돌아가기
@@ -91,16 +90,14 @@ const BoardPost = ({ lcategory, mcategory }) => {
               type="button"
               onclick={() => {
                 navigate(-1);
-              }}
-            >
+              }}>
               돌아기기
             </button>
             <button
               className="Write_button1"
               onClick={() => {
                 post();
-              }}
-            >
+              }}>
               작성 하기
             </button>
           </div>
