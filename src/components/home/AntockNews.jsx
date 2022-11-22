@@ -30,7 +30,11 @@ const AntockNews = () => {
               alt=""
             />
           </a>
-          <a href={"/Board/community/pro/detail/" + data.id}>{data.subject}</a>
+          <div className="Newsimgdiv">
+            <a href={"/Board/community/pro/detail/" + data.id}>
+              {data.subject}
+            </a>
+          </div>
         </div>
       ))}
     </>

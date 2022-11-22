@@ -1,111 +1,147 @@
 .Privacy {
-  padding: 20px;
-  border-radius: 10px;
-  height: 100px;
-
   .top {
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    margin: 20px;
-    padding: 10px;
-    font-size: 15px;
-
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 1000px 10px;
+    height: 350px;
+    background-color: white;
     h1 {
-      color: black;
-      font-size: 25px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      border-bottom: 1px solid rgb(231, 231, 229);
+      font-weight: 900;
+      font-size: 20px;
+      padding: 20px 20px 20px 20px;
+    }
+    h2 {
+      margin-top: 30px;
     }
     h3 {
-      height: 50px;
-      font-weight: 600;
+      margin-top: 20px;
+      padding: 0px 20px 0px 20px;
+      margin-bottom: 30px;
       font-size: 15px;
     }
   }
-  .bottonMain {
-    color: black;
-    font-size: 25px;
-    font-weight: bold;
+}
+.botton {
+  margin-top: 30px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 1000px 10px;
+  height: 560px;
+  background-color: white;
+}
+
+.bottonMain {
+  border-bottom: 1px solid rgb(231, 231, 229);
+  font-weight: 900;
+  font-size: 20px;
+  padding: 20px 20px 20px 20px;
+}
+form {
+  padding: 20px;
+
+  .formInput {
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  h2 {
-    border-bottom: 1px solid rgba(201, 201, 201, 0.47);
-    margin-bottom: 30px;
-  }
-
-  .botton {
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    margin: 20px;
-    padding: 10px;
     display: flex;
-    font-weight: 600;
-    .right {
-      flex: 1;
+    margin: 30px;
+    align-items: center;
 
-      .buttonDiv {
-        width: 100%;
-        display: flex;
-
-        button {
-          flex: 1;
-          font-size: 15px;
-          width: 200px;
-          padding: 10px;
-          margin-bottom: 20px;
-        }
-      }
-
-      form {
-        flex-wrap: wrap;
-
-        .formInput {
-          width: 100%;
-          height: 20px;
-          display: flex;
-          text-align: center;
-          align-items: center;
-          margin: 20px;
-          padding: 40px;
-          .name {
-            margin: 20px 0px 20px 50px;
-          }
-          div {
-            margin: 35px;
-          }
-          input {
-            width: 200px;
-            margin: 20px;
-            border: 1px solid silver;
-            text-align: center;
-          }
-          h4 {
-            color: red;
-          }
-        }
-        .formdiv {
-          width: 100%;
-          height: 20px;
-          display: flex;
-          text-align: center;
-          align-items: center;
-          margin: 20px;
-          padding: 40px;
-
-          select {
-            margin: 20px 0px 20px 52px;
-
-            .dkfooeo {
-              margin: 20px;
-            }
-          }
-        }
-      }
+    label {
+      width: 130px;
+    }
+    .name {
+      margin-right: 50px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    input {
+      border: 1px solid red;
+      align-items: center;
+      border-color: #cccccc;
+      width: 40%;
+      max-width: 400px;
+      padding: 10px 15px;
+      margin-right: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      border-color: #ededed;
     }
   }
+  h4 {
+    color: red;
+    font-size: 13px;
+  }
 }
-.dkfooeo {
-  border: 1px solid red;
+.buttonDiv {
+  text-align: end;
+  margin: 20px 30px 0px 0px;
+  button {
+    background-color: #7d1fe0;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ededed;
+    text-decoration: none !important;
+    transition: all 0.2s;
+    color: white;
+  }
+  .buttonDivsds2 {
+    margin-left: 20px;
+    background-color: red;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ededed;
+    text-decoration: none !important;
+    transition: all 0.2s;
+    color: white;
+  }
+}
+.Privacybutton {
+  background-color: #7d1fe0;
+  font-size: 14px;
+
+  margin-left: 30px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border-color: #ededed;
+  color: white;
+}
+
+.Privacybutton1 {
+  background-color: red;
+  font-size: 14px;
+  margin-left: 30px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border-color: #ededed;
+  color: white;
+}
+.formInputsd2 {
+}
+.formInput {
+  label {
+    font-size: 13px;
+  }
+  div {
+    font-size: 14px;
+  }
 }

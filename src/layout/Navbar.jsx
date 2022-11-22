@@ -114,8 +114,7 @@ const Navbar = () => {
               deleteList();
               setDeleteListsd();
               deleteList = { deleteList };
-            }}
-          >
+            }}>
             <Link>
               <ZoomInIcon />
             </Link>
@@ -126,7 +125,9 @@ const Navbar = () => {
           <div className="Hader_Login1">
             {lonned ? (
               <>
-                <span className="navbar_span">{check}</span>
+                <span className="navbar_span">
+                  <Link to="/Privacy">{check}</Link>
+                </span>
 
                 <span className="navbar_span1">님</span>
                 <button
@@ -135,8 +136,7 @@ const Navbar = () => {
                     setLonned(false);
 
                     sessionStorage.clear();
-                  }}
-                >
+                  }}>
                   로그아웃
                 </button>
               </>
@@ -150,8 +150,7 @@ const Navbar = () => {
                     <div class="modal-box relative">
                       <label
                         for="my-modal-1"
-                        class="btn-sm absolute right-6 top-9"
-                      >
+                        class="btn-sm absolute right-6 top-9">
                         ✕
                       </label>
 
@@ -218,8 +217,7 @@ const Navbar = () => {
                                 "userid",
                                 lonned.data.userId
                               );
-                            }}
-                          >
+                            }}>
                             {" "}
                             로그인{" "}
                           </label>

@@ -1,24 +1,22 @@
 .Layoutcenter {
-  max-width: 1180px;
-  max-height: 2600px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   width: 100%;
-  height: 100vh;
   .Layoutsson {
     border: 1px solid rgb(236, 234, 234);
     height: 100vh;
     width: 0%;
   }
   .asdasd {
+    width: 30%;
     height: 100%;
-    padding: 30px;
+    margin: 30px;
   }
   .Sidbar {
-    width: 300px;
+    width: 100%;
     .Sidbarss {
       box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 100px 10px;
-      border-radius: 5px 5px 5px 5px;
     }
     .Sidbarss1 {
       text-align: center;
@@ -43,7 +41,53 @@
       box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 100px 10px;
       background-color: white;
       margin-bottom: 20px;
-      height: 218px;
+      height: 240px;
+      div {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      div:nth-child(1) {
+        font-weight: bold;
+        padding: 10px 0px 10px 20px;
+        border-bottom: 1px solid rgb(231, 231, 229);
+      }
+      div:nth-child(2) {
+        padding: 12px 1px 12px 20px;
+        font-size: 13px;
+        max-width: 290px;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 30px;
+      }
+      div:nth-child(3) {
+        padding: 12px 1px 12px 20px;
+        font-size: 13px;
+        max-width: 290px;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 30px;
+      }
+      div:nth-child(4) {
+        padding: 12px 1px 12px 20px;
+        font-size: 13px;
+        max-width: 290px;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 30px;
+      }
+      div:nth-child(5) {
+        margin-top: 10px;
+        padding: 12px 10px 12px 20px;
+        border-top: 1px solid rgb(231, 231, 229);
+      }
+      div:nth-child(6) {
+        font-weight: bold;
+        padding: 12px 10px 12px 20px;
+        border-top: 1px solid rgb(231, 231, 229);
+      }
     }
     .advertisement {
       box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px;
@@ -54,18 +98,13 @@ body {
   background-color: #f1f3f5;
 }
 .Contents {
-  width: 100%;
-
-  height: 100vh;
+  width: 70%;
   padding: 30px;
 }
 .footer_maindav {
   width: 100%;
-  bottom: 0;
-  margin: 0;
-  left: 0;
   margin-top: 60px;
-  position: fixed;
+  background-color: white;
   height: 60px;
   width: 100%;
   line-height: 60px;
@@ -479,46 +518,15 @@ p {
 .Newsimg {
   font-weight: bold;
 }
-
-.SidbarNotice {
-  div {
-    display: flex;
-    align-items: center;
-    border-left: 2px solid transparent;
-    align-items: center;
-
-    color: #495057;
-    font-size: 15px;
-    border-bottom: 1px solid rgb(231, 231, 229);
-  }
-  div:nth-child(1) {
-    padding: 0.5rem 1.25rem;
-  }
-  div:nth-child(2) {
-    font-size: 13px;
-    font-weight: bold;
-    padding: 0.4rem 1.25rem;
-  }
-  div:nth-child(3) {
-    font-size: 13px;
-    font-weight: bold;
-    padding: 0.4rem 1.25rem;
-  }
-  div:nth-child(4) {
-    font-size: 13px;
-    font-weight: bold;
-    padding: 0.4rem 1.25rem;
-  }
-  div:nth-child(5) {
-    padding: 0.5rem 1.25rem;
-  }
-  div:nth-child(6) {
-    padding: 0.5rem 1.25rem;
+.Newsimgdiv {
+  width: 100%;
+  a:nth-child(1) {
+    margin-top: 10px;
   }
 }
 .Sidbarbannerlists {
-  font-size: 13px;
-  font-weight: bold;
-  color: #9a62e6;
-  margin-right: 10px;
+  margin-right: 20px;
+}
+.navbar_span :hover {
+  color: white;
 }

@@ -42,9 +42,13 @@
       height: 50px;
       border-bottom: 1px solid rgb(231, 231, 229);
 
-      td {
+      th {
         text-align: center;
         font-size: 14px;
+      }
+      th:nth-child(1) {
+      }
+      th:nth-child(2) {
       }
     }
   }
@@ -64,9 +68,10 @@
 
     tr {
       border-bottom: 1px solid rgb(231, 231, 229);
-
+      width: 100%;
       td {
         text-align: center;
+
         font-size: 14px;
         padding: 15px 0px 15px 0px;
       }
@@ -74,12 +79,27 @@
         width: 10%;
       }
       td:nth-child(2) {
-        width: 60%;
         text-align: start;
-        color: black;
+        margin: 10px 0px 10px 20px;
+        font-size: 13px;
+        right: 20px;
+        max-width: 150px;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 20px;
+        a {
+          font-size: 13px;
+          right: 20px;
+          width: 90%;
+
+          text-overflow: ellipsis;
+          overflow: hidden;
+          height: 20px;
+        }
       }
       td:nth-child(3) {
-        width: 10%;
+        width: 13%;
       }
       td:nth-child(4) {
         width: 10%;
