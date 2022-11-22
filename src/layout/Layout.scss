@@ -34,7 +34,13 @@
       }
     }
     .Sidbarbanner {
+      width: 100%;
       margin-bottom: 20px;
+      margin-right: 10px;
+      color: #9a62e6;
+      img {
+        width: 100%;
+      }
     }
     .SidbarNotice {
       border-radius: 5px 5px 5px 5px;
@@ -527,9 +533,7 @@ p {
     margin-top: 10px;
   }
 }
-.Sidbarbannerlists {
-  margin-right: 20px;
-}
+
 .navbar_span :hover {
   color: white;
 }

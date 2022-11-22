@@ -2,6 +2,7 @@ import AntockNews from "../../components/home/AntockNews";
 import Community from "../../components/home/Community";
 import ProReport from "../../components/home/ProReport";
 import "./Home.scss";
+import CommunityHot from "../../components/home/ComuunityHot";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       <div className="Homemiddr">
         <div className="Homemiddrtitle">
           <div className="Homemiddrss">실시간 인기글</div>
-          <Community lcategory={"community"} mcategory={"hot"} />
+          <CommunityHot />
         </div>
 
         <div className="Homemiddrmddle">

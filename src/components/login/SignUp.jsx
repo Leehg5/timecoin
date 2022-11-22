@@ -23,6 +23,7 @@ const SignUp = () => {
         // setSignUp(response.data);
         if (response.data == true) {
           alert("회원가입 성공!! 로그인 하세요");
+          window.location.reload();
         } else if (response.data == false) {
           alert("정보를 확인하세요");
         }

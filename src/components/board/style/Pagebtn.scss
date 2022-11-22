@@ -1,51 +1,14 @@
-.main_btn {
-  text-align: center;
-}
-
-.pre_btn {
-  padding: 4px 8px;
-  border-radius: 5px;
-}
-
-.pre_btn:hover {
-  background-color: rgb(226, 226, 226);
-}
-
-.post_btn {
-  padding: 4px 8px;
-  border-radius: 5px;
-}
-
-.post_btn:hover {
-  background-color: rgb(226, 226, 226);
-}
-
-.current_btn {
-  padding: 4px 8px;
-  border-radius: 5px;
-}
-
-.current_btn:hover {
-  background-color: rgb(226, 226, 226);
-}
-
-button[aria-current] {
-  background-color: rgb(70, 70, 70);
-  color: white;
-}
 .pagination {
   display: flex;
   justify-content: center;
   margin-top: 15px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
+  font-weight: lighter;
+  border: none;
 }
 
 ul.pagination li {
   display: inline-block;
+
   width: 30px;
   height: 30px;
   border: 1px solid #e2e2e2;
@@ -63,27 +26,36 @@ ul.pagination li:last-child {
   border-radius: 0 5px 5px 0;
 }
 
-ul.pagination li a {
-  text-decoration: none;
-  color: #337ab7;
-  font-size: 1rem;
-}
+ul.pagination li a:hover,
+ul.pagination li a.active {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 
-ul.pagination li.active a {
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none !important;
+  transition: all 0.2s;
   color: white;
+
+  background-color: rgb(211, 208, 208);
 }
 
 ul.pagination li.active {
-  background-color: #337ab7;
-}
+  font-size: 14px;
 
-ul.pagination li a:hover,
-ul.pagination li a.active {
-  color: blue;
-}
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none !important;
+  transition: all 0.2s;
+  color: white;
 
-.page-selection {
-  width: 48px;
-  height: 30px;
-  color: #337ab7;
+  background-color: rgb(211, 208, 208);
 }

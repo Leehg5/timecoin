@@ -84,8 +84,7 @@ const Searchlist = () => {
             deleteList();
             setDeleteListsd();
             deleteList = { deleteList };
-          }}
-        >
+          }}>
           검색
         </button>
         <div className="Searchlistssds3">통합 검색</div>
@@ -93,7 +92,7 @@ const Searchlist = () => {
       <div className="Searchlisttitlle">
         <div>
           <ArticleIcon />
-          문서
+          &nbsp;문서
         </div>
       </div>
       {/* <div className="Searchlisttitllelist">
@@ -135,10 +134,11 @@ const Searchlist = () => {
         nextPageText={">"}
         onChange={handlePageChange}
       />
+      <hr className="SearchlistmideHr" />
       <div className="Searchlistmide">
         <div className="Searchlistmide_Div">
           <ForumIcon />
-          댓글
+          &nbsp;댓글
         </div>
         {/* <div className="Searchlistmidelist">
           <div>제목</div>
@@ -151,7 +151,6 @@ const Searchlist = () => {
           postPerPage={postPerPage}
           currentPage2={currentPage2}
         />
-        <hr className="SearchlistmideHr" />
       </div>
       {/* <Posts boardList={location.state.test} limit={limit} page={page} />
       <Pagination
@@ -169,6 +168,7 @@ const Searchlist = () => {
         nextPageText={">"}
         onChange={handlePageChange2}
       />
+      <hr className="SearchlistmideHr" />
     </div>
   );
 };

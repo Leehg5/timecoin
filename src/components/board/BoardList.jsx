@@ -21,6 +21,9 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
     "community/fb": "유머&잡담",
     "community/hot": "인기글",
     "community/pro": "전문가의 방",
+    "notice/n": "공지사항",
+    "notice/e": "패치노트",
+    "notice/i": "문의/건의",
   };
   const registerd = () => {
     if (sessionStorage.getItem("logined") || false) {
@@ -58,8 +61,7 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
           className="BoardListbutton"
           onClick={() => {
             registerd();
-          }}
-        >
+          }}>
           + 글 쓰기
         </button>
       </div>

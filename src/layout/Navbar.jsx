@@ -119,8 +119,7 @@ const Navbar = () => {
           <button
             onClick={() => {
               deleteList();
-            }}
-          >
+            }}>
             <Link>
               <ZoomInIcon />
             </Link>
@@ -142,8 +141,8 @@ const Navbar = () => {
                     setLonned(false);
 
                     sessionStorage.clear();
-                  }}
-                >
+                    window.location.reload();
+                  }}>
                   로그아웃
                 </button>
               </>
@@ -157,8 +156,7 @@ const Navbar = () => {
                     <div class="modal-box relative">
                       <label
                         for="my-modal-1"
-                        class="btn-sm absolute right-6 top-9"
-                      >
+                        class="btn-sm absolute right-6 top-9">
                         ✕
                       </label>
 
@@ -206,6 +204,7 @@ const Navbar = () => {
                                 setLonned(lonned.data.aboolean);
                                 setTimeout(() => {});
                                 alert("로그인 성공");
+                                window.location.reload();
                               } else if (lonned.data.aboolean == false) {
                                 setLonned(lonned.data.userName);
                                 alert(
@@ -225,8 +224,7 @@ const Navbar = () => {
                                 "userid",
                                 lonned.data.userId
                               );
-                            }}
-                          >
+                            }}>
                             {" "}
                             로그인{" "}
                           </label>

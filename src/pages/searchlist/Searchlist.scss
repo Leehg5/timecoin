@@ -1,31 +1,6 @@
 .Searchlist {
-  .Searchlist_Div {
-    .Searchlist_Div1 {
-      .earchlistMain {
-        div:nth-child(1) {
-          font-size: 20px;
-          font-weight: bold;
-        }
-        .Searchlist_List {
-          display: flex;
-          padding: auto;
-          div {
-            font-weight: 100;
-            margin-right: 10px;
-            font-size: 15px;
-          }
-        }
-        .Searchlist_Link {
-          font-weight: bold;
-          font-size: 15px;
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
-.Searchlist {
   height: 100%;
+
   width: 100%;
   .Searchlist_div {
     input {
@@ -83,45 +58,85 @@
     font-size: 17px;
     margin-bottom: 5px;
   }
-  .Searchlist_List {
-    gap: 10px;
-    color: #999 !important;
-    font-size: 12px;
-  }
-  .Searchlist_Link {
-    font-size: 16px;
-  }
 }
 .Searchlisttitlle {
-  font-size: 22px;
-
+  font-size: 25px;
+  margin-bottom: 0px;
   align-items: center;
-}
-.SearchlistHr {
-  border-bottom: 1px solid #e6dfdf;
-  margin-top: 10px;
 }
 
 .Searchlistmide {
-  margin-top: 100px;
+  margin-top: 30px;
   .Searchlistmide_Div {
-    font-size: 22px;
+    margin-bottom: 0px;
+    font-size: 25px;
     align-items: center;
   }
-}
-.Searchlistmidelist {
-  div:nth-child(1) {
-    color: #0c43b7;
-    margin-top: 20px;
-    font-size: 17px;
-    margin-bottom: 5px;
-  }
-  span {
-    color: #999 !important;
-    font-size: 12px;
+  .BoardTbody10 {
+    border: 1px solid red;
   }
 }
+
 .SearchlistmideHr {
   border-bottom: 1px solid #e6dfdf;
-  margin-top: 10px;
+  margin-top: 60px;
+}
+
+.BoardTbody10 {
+  border: 1px solid red;
+  tr {
+    width: 100%;
+    div {
+      width: 100%;
+    }
+    div:nth-child(1) {
+      color: #0c43b7;
+      margin-top: 20px;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+    span:nth-child(2) {
+      color: #999 !important;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    span:nth-child(3) {
+      color: #999 !important;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    span:nth-child(4) {
+      color: #999 !important;
+      font-size: 12px;
+    }
+
+    div:nth-child(5) {
+      font-weight: 100;
+      font-size: 15px;
+    }
+  }
+}
+
+.BoardTbody5 {
+  tr {
+    width: 100%;
+
+    div {
+    }
+    div:nth-child(1) {
+      color: #0c43b7;
+      margin-top: 20px;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+    span:nth-child(2) {
+      color: #999 !important;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    span:nth-child(3) {
+      color: #999 !important;
+      font-size: 12px;
+    }
+  }
 }
