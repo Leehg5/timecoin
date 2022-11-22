@@ -1,13 +1,7 @@
 import React from "react";
-import "../style/Board.scss";
 
-const Posts = ({ boardList, postPerPage, currentPage }) => {
-  // const [limit, setLimit] = useState(20); // 한 페이지당 보여줄 리스트
-  // const [page, setPage] = useState(1); // 현재 페이지
-  const offset = (currentPage - 1) * postPerPage; // 각 페이지 첫번째 게시글 인덱스
-  boardList.sort(function (a, b) {
-    return b.id - a.id;
-  });
+const SearchBoard = ({ boardList, postPerPage, currentPage }) => {
+  const offset = (currentPage - 1) * postPerPage;
   return (
     <>
       <tbody className="BoardTbody">
@@ -42,4 +36,4 @@ const Posts = ({ boardList, postPerPage, currentPage }) => {
   );
 };
 
-export default Posts;
+export default SearchBoard;

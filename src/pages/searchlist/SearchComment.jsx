@@ -1,17 +1,11 @@
 import React from "react";
-import "../style/Board.scss";
 
-const Posts = ({ boardList, postPerPage, currentPage }) => {
-  // const [limit, setLimit] = useState(20); // 한 페이지당 보여줄 리스트
-  // const [page, setPage] = useState(1); // 현재 페이지
-  const offset = (currentPage - 1) * postPerPage; // 각 페이지 첫번째 게시글 인덱스
-  boardList.sort(function (a, b) {
-    return b.id - a.id;
-  });
+const SearchComment = ({ commentList, postPerPage, currentPage2 }) => {
+  const offset = (currentPage2 - 1) * postPerPage;
   return (
     <>
       <tbody className="BoardTbody">
-        {boardList.slice(offset, offset + postPerPage).map(
+        {commentList.slice(offset, offset + postPerPage).map(
           (
             data // 각 페이지 첫 게시글 부터 마지막 게시글
           ) => (
@@ -25,15 +19,14 @@ const Posts = ({ boardList, postPerPage, currentPage }) => {
                     "/" +
                     data.mcategory +
                     "/detail/" +
-                    data.id
+                    data.boardIndex
                   }
                 >
-                  {data.subject}
+                  {data.contents}
                 </a>
               </td>
               <td> {data.author}</td>
               <td> {data.date}</td>
-              <td> {data.views}</td>
             </tr>
           )
         )}
@@ -42,4 +35,4 @@ const Posts = ({ boardList, postPerPage, currentPage }) => {
   );
 };
 
-export default Posts;
+export default SearchComment;

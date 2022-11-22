@@ -62,15 +62,30 @@ const Sidbar = () => {
   if (!test) return null;
 
   if (0 < kospi.avg && kospi.avg < 1) {
-    kospi.avg = "0" + kospi.avg;
+    kospi.avg = (kospi.avg * 10) / 10;
+  }
+  if (0 > kospi.avg && kospi.avg > -1) {
+    kospi.avg = (kospi.avg * 10) / 10;
+  }
+  if (0 < kosdaq.avg && kosdaq.avg < 1) {
+    kosdaq.avg = (kosdaq.avg * 10) / 10;
+  }
+  if (0 > kosdaq.avg && kosdaq.avg > -1) {
+    kosdaq.avg = (kosdaq.avg * 10) / 10;
   }
 
   if (0 < samsung.avg && samsung.avg < 1) {
-    samsung.avg = "0" + samsung.avg;
+    samsung.avg = (samsung.avg * 10) / 10;
+  }
+  if (0 > samsung.avg && samsung.avg > -1) {
+    samsung.avg = (samsung.avg * 10) / 10;
   }
 
   if (0 < kakao.avg && kakao.avg < 1) {
-    kakao.avg = "0" + kakao.avg;
+    kakao.avg = (kakao.avg * 10) / 10;
+  }
+  if (0 > kakao.avg && kakao.avg > -1) {
+    kakao.avg = (kakao.avg * 10) / 10;
   }
 
   const toggleTab = (index) => {
@@ -412,7 +427,7 @@ const Sidbar = () => {
         {boardList.map((data) => (
           <div>
             <a href={"/Board/notice/n/detail/" + data.id}>
-              <span className="Sidbarbannerlists">공지</span>
+              <span className="Sidbarbanner">공지</span>
               {data.subject}
             </a>
           </div>

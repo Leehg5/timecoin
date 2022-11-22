@@ -3,12 +3,12 @@ import "./style/Board.scss";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Posts from "./posts/Posts";
-import Pagination from "./posts/Pagination";
-import { BACK_URL } from "../../config";
+import Pagination from "react-js-pagination";
+import "./style/Pagebtn.scss";
 
 const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
-  const [limit, setLimit] = useState(20); // 한 페이지당 보여줄 리스트
-  const [page, setPage] = useState(1); // 현재 페이지
+  const [postPerPage] = useState(20); // 한 페이지당 보여줄 리스트
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
   const navigate = useNavigate();
   boardList.sort(function (a, b) {
     return b.id - a.id;
@@ -33,18 +33,23 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
     const getData = async () => {
       try {
         const data = await axios({
-          url: `${BACK_URL}` + lcategory + "/" + mcategory + "/get",
+          url:
+            "http://localhost:7999/board/" +
+            lcategory +
+            "/" +
+            mcategory +
+            "/get",
           method: "GET",
         });
         setBoardList(data.data);
-        console.log(boardList);
-      } catch (e) {
-        console.log(e);
-      }
+      } catch (e) {}
     };
     getData();
   }, []);
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
     <div class="Board">
       <div className="BoardDiv">
@@ -69,44 +74,23 @@ const BoardList = ({ lcategory, mcategory, boardList, setBoardList }) => {
               <th scope="col">조회수</th>
             </tr>
           </thead>
-          {/* <tbody className="BoardTbody">
-            {boardList.map((data) => (
-              <tr key={data.id}>
-                <td> {data.id}</td>
-                <td>
-                  <a
-                    href={
-                      "/Board/" +
-                      lcategory +
-                      "/" +
-                      mcategory +
-                      "/detail/" +
-                      data.id
-                    }
-                  >
-                    {data.subject}
-                  </a>
-                </td>
-                <td> {data.author}</td>
-                <td> {data.date}</td>
-                <td> {data.views}</td>
-              </tr>
-            ))}
-          </tbody> */}
           <Posts
             boardList={boardList}
             lcategory={lcategory}
             mcategory={mcategory}
-            limit={limit}
-            page={page}
+            postPerPage={postPerPage}
+            currentPage={currentPage}
           />
         </table>
       </div>
       <Pagination
-        total={boardList.length}
-        limit={limit}
-        page={page}
-        setPage={setPage}
+        activePage={currentPage}
+        itemsCountPerPage={20}
+        totalItemsCount={boardList.length}
+        pageRangeDisplayed={5}
+        prevPageText={"<"}
+        nextPageText={">"}
+        onChange={handlePageChange}
       />
     </div>
   );
