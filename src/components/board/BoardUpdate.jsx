@@ -22,19 +22,19 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
         data: {
           subject: subject,
           contents: contents,
-          author: author,
+          author: sessionStorage.getItem("userid"),
         },
       });
       setBoardText(data.data);
+      console.log(data);
       if (data.data === true) {
         alert("수정완료");
         navigate(-1);
+        console.log(data.data);
       } else if (data.data === false) {
         alert("실패");
       }
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   };
 
   const check = sessionStorage.getItem("logined") || false;
@@ -102,8 +102,7 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
               className="Write_button1"
               onClick={() => {
                 patch();
-              }}
-            >
+              }}>
               수정 하기
             </button>
             <button
@@ -111,8 +110,7 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
               type="button"
               onclick={() => {
                 navigate(-1);
-              }}
-            >
+              }}>
               돌아기기
             </button>
           </div>

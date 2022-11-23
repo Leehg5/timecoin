@@ -72,7 +72,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
         method: "DELETE",
         data: {
           id: boardid,
-          author: sessionStorage.getItem("logined"),
+          author: sessionStorage.getItem("userid"),
         },
       });
       if (data.data === true) {
@@ -126,7 +126,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
       {
         data: {
           id: x,
-          author: sessionStorage.getItem("logined"),
+          author: sessionStorage.getItem("userid"),
         },
       }
     );

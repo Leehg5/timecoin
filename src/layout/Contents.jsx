@@ -19,7 +19,14 @@ const Contents = () => {
         />
         <Route
           path="/Board/:lcategory/:mcategory/*"
-          element={<Board boardList={boardList} setBoardList={setBoardList} />}
+          element={
+            <Board
+              boardList={boardList}
+              setBoardList={setBoardList}
+              userId={userId}
+              setUserId={setUserId}
+            />
+          }
         />
         <Route
           path="/privacy"

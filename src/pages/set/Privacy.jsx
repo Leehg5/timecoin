@@ -172,7 +172,7 @@ const Privacy = () => {
                 <div>{userId}</div>
               </div>
               <div className="formInput">
-                <label>비밀번호 (변경)</label>
+                <label>비밀번호</label>
                 <input
                   type="password"
                   vlaue={signOutPassword}
@@ -202,7 +202,7 @@ const Privacy = () => {
                   });
                   if (signOut.data == true) {
                     console.log(signOut.data);
-                    alert("회원탈퇴");
+                    alert("회원탈퇴 완료");
                     setLonned(false);
                     sessionStorage.clear();
                     navigate("/");

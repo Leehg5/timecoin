@@ -27,7 +27,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
         alert("작성완료");
         navigate(-1);
       } else if (data.data === false) {
-        alert("관리자가 아닙니다.");
+        alert("접근이 불가능 합니다");
       }
     } catch (e) {
       console.log(e);

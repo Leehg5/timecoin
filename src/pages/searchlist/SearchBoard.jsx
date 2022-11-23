@@ -10,7 +10,7 @@ const SearchBoard = ({ boardList, postPerPage, currentPage }) => {
           (
             data // 각 페이지 첫 게시글 부터 마지막 게시글
           ) => (
-            <tr key={data.id}>
+            <div className="djdjfl23" key={data.id}>
               <div>
                 <a
                   href={
@@ -40,7 +40,7 @@ const SearchBoard = ({ boardList, postPerPage, currentPage }) => {
                   {data.contents}
                 </a>
               </div>
-            </tr>
+            </div>
           )
         )}
       </tbody>

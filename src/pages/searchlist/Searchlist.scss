@@ -83,9 +83,7 @@
 }
 
 .BoardTbody10 {
-  border: 1px solid red;
-  tr {
-    width: 100%;
+  .djdjfl23 {
     div {
       width: 100%;
     }
@@ -113,6 +111,10 @@
     div:nth-child(5) {
       font-weight: 100;
       font-size: 15px;
+      text-overflow: inherit;
+      overflow: hidden;
+      height: 60px;
+      overflow: hidden;
     }
   }
 }
@@ -128,6 +130,10 @@
       margin-top: 20px;
       font-size: 17px;
       margin-bottom: 5px;
+      overflow: hidden;
+      height: 20px;
+      max-height: 40px;
+      overflow: hidden;
     }
     span:nth-child(2) {
       color: #999 !important;
