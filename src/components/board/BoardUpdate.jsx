@@ -20,13 +20,14 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
         url: `${BACK_URL}` + lcategory + "/" + mcategory + "/patch",
         method: "PATCH",
         data: {
+          id: boardid,
           subject: subject,
           contents: contents,
           author: sessionStorage.getItem("userid"),
         },
       });
       setBoardText(data.data);
-      console.log(data);
+
       if (data.data === true) {
         alert("수정완료");
         navigate(-1);
