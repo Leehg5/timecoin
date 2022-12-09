@@ -259,7 +259,7 @@ const Sidbar = () => {
               </div>
               <div class="border_line"></div>
             </div>
-            <div
+            {/* <div
               className={
                 toggleState === 2 ? "content  active-content" : "content"
               }>
@@ -404,7 +404,7 @@ const Sidbar = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const SignUp = () => {
 
   const registerd = () => {
     axios
-      .post("http://localhost:7999/account/signUp", {
+      .post("http://localhost:9005/account/signUp", {
         userId,
         userName,
         password,
