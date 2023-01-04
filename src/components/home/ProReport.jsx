@@ -3,7 +3,7 @@ import React from "react";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { BACK_URL } from "../../config";
 const ProReport = () => {
   const [boardList, setBoardList] = useState([]);
   const [lonned, setLonned] = useState(false);
@@ -12,7 +12,7 @@ const ProReport = () => {
     const getData = async () => {
       try {
         const data = await axios({
-          url: "http://localhost:7999/board/community/pro/get5",
+          url: `${BACK_URL}board/community/pro/get5`,
           method: "GET",
         });
         setBoardList(data.data);

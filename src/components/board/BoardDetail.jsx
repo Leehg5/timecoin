@@ -8,6 +8,7 @@ import { BACK_URL } from "../../config";
 const BoardDetail = ({ lcategory, mcategory, boardList }) => {
   const { boardid } = useParams();
   const navigate = useNavigate();
+  const backnavigate = useNavigate();
   // 게시글 상세내용
   const [boardDetail, setboardDetail] = useState([]);
   // 댓글 작성
@@ -22,7 +23,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     const getBoardData = async () => {
       try {
         const data = await axios({
-          url: `${BACK_URL}` + lcategory + "/" + mcategory + "/getid",
+          url: `${BACK_URL}board/${lcategory}/${mcategory}/getid`,
           method: "GET",
           params: {
             id: boardid,
@@ -37,12 +38,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     const getCommentData = async () => {
       try {
         const data = await axios({
-          url:
-            "http://localhost:7999/board/" +
-            lcategory +
-            "/" +
-            mcategory +
-            "/getid/comment",
+          url: `${BACK_URL}board/${lcategory}/${mcategory}/getid/comment`,
           method: "GET",
           params: {
             id: boardid,
@@ -63,12 +59,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
   const deleteList = async () => {
     try {
       const data = await axios({
-        url:
-          "http://localhost:7999/board/" +
-          lcategory +
-          "/" +
-          mcategory +
-          "/delete",
+        url: `${BACK_URL}board/${lcategory}/${mcategory}/delete`,
         method: "DELETE",
         data: {
           id: boardid,
@@ -89,12 +80,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     if (sessionStorage.getItem("logined") || false) {
       try {
         const data = await axios({
-          url:
-            "http://localhost:7999/board/" +
-            lcategory +
-            "/" +
-            mcategory +
-            "/post/comment",
+          url: `${BACK_URL}board/${lcategory}/${mcategory}/post/comment`,
           method: "POST",
           data: {
             contents: comment,
@@ -117,19 +103,12 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     }
   };
   const comdelete = (x) => {
-    axios.delete(
-      "http://localhost:7999/board/" +
-        lcategory +
-        "/" +
-        mcategory +
-        "/delete/comment",
-      {
-        data: {
-          id: x,
-          author: sessionStorage.getItem("userid"),
-        },
-      }
-    );
+    axios.delete(`${BACK_URL}board/${lcategory}/${mcategory}/delete/comment`, {
+      data: {
+        id: x,
+        author: sessionStorage.getItem("userid"),
+      },
+    });
     window.location.reload();
   };
 
@@ -152,21 +131,17 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                 <>
                   <div className="Deletebuttonor">
                     <a
-                      href={
-                        "/Board/" +
-                        lcategory +
-                        "/" +
-                        mcategory +
-                        "/update/" +
-                        boardDetail.id
-                      }>
+                      href={`/Board/${lcategory}/${mcategory}/update/
+                        ${boardDetail.id}`}
+                    >
                       수정
                     </a>
                     <button
                       className="DetailPageButton2"
                       onClick={() => {
                         deleteList();
-                      }}>
+                      }}
+                    >
                       삭제
                     </button>
                   </div>
@@ -181,10 +156,16 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
         <div className="DetailPage_List_cjah_div">
           <div className="DetailPage_List_cjah">{boardDetail.contents}</div>
         </div>
-      </div>{" "}
-      <div className="sdsdaw4efr34">
-        <ArrowBackIcon className="icon" /> &nbsp; 목록으로
       </div>
+      <button
+        className="sdsdaw4efr34"
+        type="button"
+        onClick={() => {
+          backnavigate(-1);
+        }}
+      >
+        <ArrowBackIcon className="icon" /> &nbsp; 목록으로
+      </button>
       <div className="DetailPageList1">
         <div className="DetailPage_Booot">
           <div className="DetailPage_BoootMaindiv">
@@ -206,7 +187,8 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                         <button
                           onClick={() => {
                             comdelete(list.id);
-                          }}>
+                          }}
+                        >
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </button>
@@ -235,7 +217,8 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
               className="DetailPage_button1"
               onClick={() => {
                 compost();
-              }}>
+              }}
+            >
               등록
             </button>
           </div>

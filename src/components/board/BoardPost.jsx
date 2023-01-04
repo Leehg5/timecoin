@@ -15,7 +15,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
   const post = async () => {
     try {
       const data = await axios({
-        url: `${BACK_URL}` + lcategory + "/" + mcategory + "/post",
+        url: `${BACK_URL}board/${lcategory}/${mcategory}/post`,
         method: "POST",
         data: {
           subject: subject,
@@ -45,7 +45,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
       <a href="">
         <button
           type="button"
-          onclick={() => {
+          onClick={() => {
             navigate(-1);
           }}>
           <h1>
@@ -88,7 +88,7 @@ const BoardPost = ({ lcategory, mcategory }) => {
             <button
               className="Write_button2"
               type="button"
-              onclick={() => {
+              onClick={() => {
                 navigate(-1);
               }}>
               돌아기기
@@ -96,6 +96,14 @@ const BoardPost = ({ lcategory, mcategory }) => {
             <button
               className="Write_button1"
               onClick={() => {
+                if (subject === "") {
+                  alert("제목을 입력해주세요");
+                  return;
+                }
+                if (contents === "") {
+                  alert("내용을 입력해주세요");
+                  return;
+                }
                 post();
               }}>
               작성 하기

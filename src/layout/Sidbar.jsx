@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import "./Layout.scss";
-
+import { BACK_URL } from "../config";
 const Sidbar = () => {
   const [toggleState, setToggleState] = useState(1);
   const [test, setTest] = useState(null);
@@ -21,7 +21,7 @@ const Sidbar = () => {
       setTest(null);
       // loading 상태를 true 로 바꿉니다.
       setLoading(true);
-      const data = await axios.get("http://localhost:7999/board/notice/n/get3");
+      const data = await axios.get(`${BACK_URL}board/notice/n/get3`);
       setBoardList(data.data);
 
       const response = await axios.get(
@@ -29,20 +29,20 @@ const Sidbar = () => {
       );
       setTest(response.data); // 데이터는 response.data 안에 들어있습니다.
       const kospiGet = await axios.get(
-        "http://localhost:7999/chart/Market/get?name=코스피"
+        `${BACK_URL}chart/Market/get?name=코스피`
       );
 
       setKospi(kospiGet.data);
       const kosdaqGet = await axios.get(
-        "http://localhost:7999/chart/Market/get?name=코스닥"
+        `${BACK_URL}chart/Market/get?name=코스닥`
       );
       setKosdaq(kosdaqGet.data);
       const samsungGet = await axios.get(
-        "http://localhost:7999/chart/Stock/get?name=삼성전자"
+        `${BACK_URL}chart/Stock/get?name=삼성전자`
       );
       setSamsung(samsungGet.data);
       const kakaoGet = await axios.get(
-        "http://localhost:7999/chart/Stock/get?name=카카오뱅크"
+        `${BACK_URL}chart/Stock/get?name=카카오뱅크`
       );
       setKakao(kakaoGet.data);
     } catch (e) {
@@ -100,12 +100,14 @@ const Sidbar = () => {
           <div className="bloc-tabs">
             <button
               className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(1)}>
+              onClick={() => toggleTab(1)}
+            >
               코인
             </button>
             <button
               className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(2)}>
+              onClick={() => toggleTab(2)}
+            >
               증시
             </button>
           </div>
@@ -114,10 +116,10 @@ const Sidbar = () => {
             <div
               className={
                 toggleState === 1 ? "content  active-content" : "content"
-              }>
+              }
+            >
               <div class="aaaaaaa">
                 <div class="img_box">
-                  {" "}
                   <img
                     class="logo_img"
                     src="https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg"
@@ -126,7 +128,6 @@ const Sidbar = () => {
                 <span class="first_name">BTC</span>
                 <div class="aaa1">
                   <div>
-                    {" "}
                     <span>
                       {test[0].opening_price
                         .toString()
@@ -140,7 +141,8 @@ const Sidbar = () => {
                         test[0].signed_change_price > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }>
+                      }
+                    >
                       {test[0].signed_change_price
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
@@ -151,11 +153,9 @@ const Sidbar = () => {
                         test[0].signed_change_rate > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }>
-                      {" "}
-                      {(test[0].signed_change_rate.toFixed(3) * 100).toFixed(
-                        2
-                      )}{" "}
+                      }
+                    >
+                      {(test[0].signed_change_rate.toFixed(3) * 100).toFixed(2)}
                       %
                     </span>
                   </div>
@@ -166,7 +166,6 @@ const Sidbar = () => {
               <div>
                 <div class="aaaaaaa">
                   <div class="img_box">
-                    {" "}
                     <img
                       class="logo_img"
                       src="https://s3-symbol-logo.tradingview.com/crypto/XTVCETH.svg"
@@ -175,12 +174,11 @@ const Sidbar = () => {
                   <span class="first_name">ETH</span>
                   <div class="aaa1">
                     <div>
-                      {" "}
                       <span>
                         {test[1].opening_price
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        원{" "}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        원
                       </span>
                     </div>
                     <div>
@@ -189,22 +187,23 @@ const Sidbar = () => {
                           test[1].signed_change_price > 0
                             ? { color: "red" }
                             : { color: "blue" }
-                        }>
+                        }
+                      >
                         {test[1].signed_change_price
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        원{" "}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        원
                       </span>
                       <span
                         style={
                           test[1].signed_change_rate > 0
                             ? { color: "red" }
                             : { color: "blue" }
-                        }>
-                        {" "}
+                        }
+                      >
                         {(test[1].signed_change_rate.toFixed(3) * 100).toFixed(
                           2
-                        )}{" "}
+                        )}
                         %
                       </span>
                     </div>
@@ -222,12 +221,11 @@ const Sidbar = () => {
                 <span class="first_name">XRP</span>
                 <div class="aaa1">
                   <div>
-                    {" "}
                     <span>
                       {test[2].opening_price
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                      원{" "}
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      원
                     </span>
                   </div>
                   <div>
@@ -236,22 +234,21 @@ const Sidbar = () => {
                         test[2].signed_change_price > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }>
+                      }
+                    >
                       {test[2].signed_change_price
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                      원{" "}
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      원
                     </span>
                     <span
                       style={
                         test[2].signed_change_rate > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }>
-                      {" "}
-                      {(test[2].signed_change_rate.toFixed(3) * 100).toFixed(
-                        2
-                      )}{" "}
+                      }
+                    >
+                      {(test[2].signed_change_rate.toFixed(3) * 100).toFixed(2)}
                       %
                     </span>
                   </div>
@@ -259,10 +256,11 @@ const Sidbar = () => {
               </div>
               <div class="border_line"></div>
             </div>
-            {/* <div
+            <div
               className={
                 toggleState === 2 ? "content  active-content" : "content"
-              }>
+              }
+            >
               <div class="tbl_type">
                 <div class="aaaaaaa">
                   <div class="img_box">
@@ -274,13 +272,13 @@ const Sidbar = () => {
                   <span class="first_name">코스피</span>
                   <div class="aaa1">
                     <div>
-                      {" "}
                       <span>{kospi.value}</span>
                       <span
                         style={
                           kospi.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }>
-                        {kospi.avg} %
+                        }
+                      >
+                        {kospi.avg.toFixed(2)} %
                       </span>
                     </div>
                     <div>
@@ -293,7 +291,6 @@ const Sidbar = () => {
                 <div>
                   <div class="aaaaaaa">
                     <div class="img_box">
-                      {" "}
                       <img
                         class="logo_img"
                         src="https://s3-symbol-logo.tradingview.com/country/KR.svg"
@@ -302,15 +299,15 @@ const Sidbar = () => {
                     <span class="first_name">코스닥</span>
                     <div class="aaa1">
                       <div>
-                        {" "}
                         <span>{kosdaq.value}</span>
                         <span
                           style={
                             kosdaq.avg > 0
                               ? { color: "red" }
                               : { color: "blue" }
-                          }>
-                          {kosdaq.avg} %
+                          }
+                        >
+                          {kosdaq.avg.toFixed(2)} %
                         </span>
                       </div>
                       <div>
@@ -323,7 +320,6 @@ const Sidbar = () => {
                 <div class="border_line"></div>
                 <div class="aaaaaaa">
                   <div class="img_box">
-                    {" "}
                     <img
                       class="logo_img_sam"
                       src="https://www.samsung.com/sec/static/_images/common/logo_samsung_black.svg"
@@ -332,17 +328,17 @@ const Sidbar = () => {
                   <span class="first_name">삼성증권</span>
                   <div class="aaa1">
                     <div>
-                      {" "}
                       <span>
                         {samsung.value
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         원
                       </span>
                       <span
                         style={
                           samsung.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }>
+                        }
+                      >
                         {samsung.avg} %
                       </span>
                     </div>
@@ -373,7 +369,6 @@ const Sidbar = () => {
                   <span class="first_name">카카오</span>
                   <div class="aaa1">
                     <div>
-                      {" "}
                       <span>
                         {kakao.value
                           .toString()
@@ -383,7 +378,8 @@ const Sidbar = () => {
                       <span
                         style={
                           kakao.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }>
+                        }
+                      >
                         {kakao.avg} %
                       </span>
                     </div>
@@ -404,14 +400,12 @@ const Sidbar = () => {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
       <a href="https://kr.tradingview.com/markets/">
-        {" "}
         <div className="Sidbarss1">
-          {" "}
           <KeyboardDoubleArrowRightIcon className="Sidbarss1icon" /> 트레이딩뷰
           제공
           <span className="Sidbarss1span"> 파이낸셜 마켓 </span>

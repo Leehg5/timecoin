@@ -17,7 +17,7 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
   const patch = async () => {
     try {
       const data = await axios({
-        url: `${BACK_URL}` + lcategory + "/" + mcategory + "/patch",
+        url: `${BACK_URL}board/${lcategory}/${mcategory}/patch`,
         method: "PATCH",
         data: {
           id: boardid,
@@ -49,12 +49,7 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
     const getData = async () => {
       try {
         const data = await axios({
-          url:
-            "http://localhost:7999/board/" +
-            lcategory +
-            "/" +
-            mcategory +
-            "/getid",
+          url: `${BACK_URL}board/${lcategory}/${mcategory}/getid`,
           method: "GET",
           params: {
             id: boardid,
@@ -82,7 +77,6 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
                 defaultValue={boardtext.subject}
                 onChange={(e) => {
                   setSubject(e.target.value);
-                  console.log(e.target.value);
                 }}
               />
             </div>
@@ -102,6 +96,17 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
             <button
               className="Write_button1"
               onClick={() => {
+                if (boardtext.subject === subject) {
+                  alert("수정할 내용을 변경해주세요");
+                  console.log(boardtext.subject);
+                  return;
+                }
+                if (boardtext.contents === contents) {
+                  alert("수정할 내용을 변경해주세요");
+                  return;
+                }
+                console.log(boardtext.subject);
+                console.log(boardtext.contents);
                 patch();
               }}>
               수정 하기
@@ -109,7 +114,7 @@ const BoardUpdate = ({ lcategory, mcategory }) => {
             <button
               className="Write_button2"
               type="button"
-              onclick={() => {
+              onClick={() => {
                 navigate(-1);
               }}>
               돌아기기

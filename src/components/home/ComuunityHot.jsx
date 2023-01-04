@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import { BACK_URL } from "../../config";
 const CommunityHot = () => {
   const [boardList, setBoardList] = useState([]);
 
@@ -10,7 +10,7 @@ const CommunityHot = () => {
     const getData = async () => {
       try {
         const data = await axios({
-          url: "http://localhost:7999/board/1/1/get5hot",
+          url: `${BACK_URL}board/1/1/get5hot`,
           method: "GET",
         });
         setBoardList(data.data);
@@ -45,7 +45,8 @@ const CommunityHot = () => {
               data.mcategory +
               "/detail/" +
               data.id
-            }>
+            }
+          >
             {data.subject}
           </a>
         </div>

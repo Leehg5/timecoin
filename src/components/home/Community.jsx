@@ -2,19 +2,14 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import { BACK_URL } from "../../config";
 const Community = ({ lcategory, mcategory }) => {
   const [boardList, setBoardList] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await axios({
-          url:
-            "http://localhost:7999/board/" +
-            lcategory +
-            "/" +
-            mcategory +
-            "/get5",
+          url: `${BACK_URL}board/${lcategory}/${mcategory}/get5`,
           method: "GET",
         });
         setBoardList(data.data);

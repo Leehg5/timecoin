@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-
-import LanguageIcon from "@mui/icons-material/Language";
 import axios from "axios";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import { useNavigate, Link } from "react-router-dom";
 import { recoilPersist } from "recoil-persist";
 import SignUp from "../components/login/SignUp";
+import { BACK_URL } from "../config";
 const Navbar = () => {
   const [lonned, setLonned] = useState(false);
   const [userId, setUserId] = useState();
@@ -21,10 +20,10 @@ const Navbar = () => {
 
   const deleteList = async () => {
     const response = await axios.get(
-      `http://localhost:7999/board/1/2/searchAll?value=${gggg}`
+      `${BACK_URL}board/1/2/searchAll?value=${gggg}`
     );
     const response2 = await axios.get(
-      `http://localhost:7999/board/1/2/searchAll/comment?value=${gggg}`
+      `${BACK_URL}board/1/2/searchAll/comment?value=${gggg}`
     );
     // console.log(response.data);
     setBoardText(response.data);
@@ -119,7 +118,8 @@ const Navbar = () => {
           <button
             onClick={() => {
               deleteList();
-            }}>
+            }}
+          >
             <Link>
               <ZoomInIcon />
             </Link>
@@ -142,7 +142,8 @@ const Navbar = () => {
 
                     sessionStorage.clear();
                     window.location.reload();
-                  }}>
+                  }}
+                >
                   로그아웃
                 </button>
               </>
@@ -156,7 +157,8 @@ const Navbar = () => {
                     <div class="modal-box relative">
                       <label
                         for="my-modal-1"
-                        class="btn-sm absolute right-6 top-9">
+                        class="btn-sm absolute right-6 top-9"
+                      >
                         ✕
                       </label>
 
@@ -164,6 +166,7 @@ const Navbar = () => {
                       <p class="py-4">
                         <div>
                           <div className="Login_input">
+                            아이디
                             <input
                               className="loginId"
                               type="text"
@@ -174,6 +177,7 @@ const Navbar = () => {
                             />
                           </div>
                           <div className="Login_input1">
+                            비밀번호
                             <input
                               className="loginPw"
                               type="password"
@@ -184,14 +188,13 @@ const Navbar = () => {
                             />
                           </div>
                           <div className="loginMid"></div>
-                          <div className="autoLogin">아이디/비밀번호 찾기</div>
-                          <label
+                                <label
                             type="submit"
                             className="loginBtn"
                             for="my-modal-1"
                             onClick={async () => {
                               const lonned = await axios({
-                                url: "http://localhost:7999/account/signIn",
+                                url: `${BACK_URL}account/signIn`,
                                 method: "POST",
                                 data: { userId, password },
                               });
@@ -224,10 +227,13 @@ const Navbar = () => {
                                 "userid",
                                 lonned.data.userId
                               );
-                            }}>
+                            }}
+                          >
                             {" "}
                             로그인{" "}
                           </label>
+                          <div className="autoLogin">아이디/비밀번호 찾기</div>
+                    
                         </div>
                         <div className="socialBox">
                           <div className="kakao">

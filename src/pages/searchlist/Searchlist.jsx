@@ -7,7 +7,7 @@ import ForumIcon from "@mui/icons-material/Forum";
 import Pagination from "react-js-pagination";
 import SearchBoard from "./SearchBoard";
 import SearchComment from "./SearchComment";
-
+import { BACK_URL } from "../../config";
 const Searchlist = () => {
   const location = useLocation();
 
@@ -33,10 +33,10 @@ const Searchlist = () => {
 
   const deleteList = async () => {
     const response = await axios.get(
-      `http://localhost:7999/board/1/2/searchAll?value=${gggg}`
+      `${BACK_URL}board/1/2/searchAll?value=${gggg}`
     );
     const response2 = await axios.get(
-      `http://localhost:7999/board/1/2/searchAll/comment?value=${gggg}`
+      `${BACK_URL}board/1/2/searchAll/comment?value=${gggg}`
     );
     // console.log(response.data);
     setBoardText(response.data);
@@ -84,7 +84,8 @@ const Searchlist = () => {
             deleteList();
             setDeleteListsd();
             deleteList = { deleteList };
-          }}>
+          }}
+        >
           검색
         </button>
         <div className="Searchlistssds3">통합 검색</div>
@@ -95,31 +96,6 @@ const Searchlist = () => {
           &nbsp;문서
         </div>
       </div>
-      {/* <div className="Searchlisttitllelist">
-        {location.state.test.map((hhh) => (
-          <div className="earchlistMain" key={hhh}>
-            <div>
-              {" "}
-              <Link to={`../detailPage/${hhh.id}`} state={{ number: hhh.id }}>
-                {hhh.subject}
-              </Link>
-            </div>
-            <div className="Searchlist_List">
-              <span>{hhh.author}</span>
-
-              <span>{hhh.date}</span>
-
-              <span>조회수 : {hhh.views}</span>
-            </div>
-            <div className="Searchlist_Link">
-              <Link to={`../detailPage/${hhh.id}`} state={{ number: hhh.id }}>
-                {hhh.contents}
-              </Link>
-            </div>
-            <hr className="SearchlistHr" />
-          </div>
-        ))} */}
-      {/* </div> */}
       <SearchBoard
         boardList={location.state.test}
         postPerPage={postPerPage}
@@ -140,11 +116,6 @@ const Searchlist = () => {
           <ForumIcon />
           &nbsp;댓글
         </div>
-        {/* <div className="Searchlistmidelist">
-          <div>제목</div>
-          <span>김강수</span>
-          <span>2022.02.18</span>
-        </div> */}
         <SearchComment
           commentList={location.state.test2}
           category={location.state.test}
@@ -152,13 +123,6 @@ const Searchlist = () => {
           currentPage2={currentPage2}
         />
       </div>
-      {/* <Posts boardList={location.state.test} limit={limit} page={page} />
-      <Pagination
-        total={location.state.test.length}
-        limit={limit}
-        page={page}
-        setPage={setPage}
-      /> */}
       <Pagination
         activePage={currentPage2}
         itemsCountPerPage={5}

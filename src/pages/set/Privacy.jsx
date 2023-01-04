@@ -4,7 +4,7 @@ import "./Privacy.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import colorObject from "daisyui/src/colors";
-
+import { BACK_URL } from "../../config";
 const Privacy = () => {
   const [lonned, setLonned] = useState(false);
   const [toggleState, setToggleState] = useState(1);
@@ -54,7 +54,7 @@ const Privacy = () => {
         <button
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}>
-          회원정보 변경
+          비밀번호 변경
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
@@ -123,7 +123,7 @@ const Privacy = () => {
                   type="reset"
                   onClick={async () => {
                     const lonned = await axios({
-                      url: "http://localhost:7999/account/pwReset",
+                      url: `${BACK_URL}account/pwReset`,
                       method: "patch",
                       data: {
                         userId,
@@ -190,7 +190,7 @@ const Privacy = () => {
                 className="sda23sbutton"
                 onClick={async () => {
                   const signOut = await axios({
-                    url: "http://localhost:7999/account/signOut",
+                    url: `${BACK_URL}account/signOut`,
                     method: "delete",
                     data: {
                       userId,

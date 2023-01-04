@@ -2,14 +2,14 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import { BACK_URL } from "../../config";
 const AntockNews = () => {
   const [boardList, setBoardList] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await axios({
-          url: "http://localhost:7999/board/community/pro/get3",
+          url: `${BACK_URL}board/community/pro/get3`,
           method: "GET",
         });
         setBoardList(data.data);
