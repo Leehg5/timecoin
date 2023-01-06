@@ -12,7 +12,7 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [error1, setError1] = useState("");
    const [error2, setError2] = useState("");
-
+  
     const [checkedItems, setCheckedItems] = useState({
     fruit1: false,
     fruit2: false,
@@ -35,7 +35,6 @@ const SignUp = () => {
       fruit4: event.target.checked,
     });
   };
-  
   
 
 
@@ -73,18 +72,18 @@ const SignUp = () => {
       <input type="checkbox" id="my-modal" class="modal-toggle" />
       <div class="modal">
         <div class="modal-box">
-          <h3 class="font-bold text-lg">회원가입</h3>
-          <AccountCircleIcon sx={{ fontSize: 70, marginTop: "20px" }} />
+          <h3 class="font">회원가입</h3>
+
     <p class="py-4"> 
 
         <div className="SigUp_input">
             <div>
-              닉네임 
+              이름 or 닉네임 
               <input
               class="sdasds343"
                 type="text"
                 name="userId"
-                placeholder="닉네임를 입력해주세요"
+                placeholder="이름 or 닉네임 을 입력해주세요"
                 value={userName}
                 onChange={(event) => setUserName(event.target.value)}
               />
@@ -121,7 +120,7 @@ const SignUp = () => {
               />
             </div>
             <br />
-            <div>
+    <div className="SigUp_input">
               비밀번호 재입력 
               <input
                      class="sdasds343"
@@ -204,37 +203,41 @@ const SignUp = () => {
           <div className="SignUpbutton1">
             <button
               onClick={() => {
-                if (password !== confirmPassword) {
-                  setError("비밀번호가 일치하지 않습니다.");
-                  return;
+         if (!userName || userName.length < 3 || userName.length > 12) {
+                  // userid is invalid
+                  setError2("이름 또는 닉네임 3~12자 이내로 입력해주세요.");
+                               return;
                 }
-                if (password.length < 8) {
-                  setError("비밀번호가 8자 이상으로 입력해주세요");
-                  return;
-                }
-
-                if (!userId || userId.length < 5 || userId.length > 12) {
+                
+                 if (!userId || userId.length < 5 || userId.length > 12) {
                   // userid is invalid
                   setError1("아이디는 5~12자 이내로 입력해주세요.");
-                  return;
+                               return;
                 }
+                 if (password.length < 8) {
+                  setError("비밀번호가 8자 이상으로 입력해주세요");
+                     return;
+                }
+          
 
                 if (!/^[a-zA-Z0-9]+$/.test(userId)) {
                   // userid is invalid
                   setError1("아이디는 영문과 숫자만 사용 가능합니다.");
                   return;
                 }
-                if (!userName || userName.length < 4 || userName.length > 12) {
-                  // userid is invalid
-                  setError2("닉네임 4~12자 이내로 입력해주세요.");
+                if (password !== confirmPassword) {
+                  setError("비밀번호가 일치하지 않습니다.");
                   return;
                 }
+                
+
+             
 
                 // check if userid already exists
 
                 // userid is valid
                 setError1("");
-
+ setError2("");
                 registerd();
                 console.log(userId, password, userName, confirmPassword);
               }}>

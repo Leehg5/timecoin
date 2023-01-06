@@ -48,6 +48,7 @@
       background-color: white;
       margin-bottom: 20px;
       height: 240px;
+
       div {
         font-size: 15px;
         font-weight: 600;
@@ -137,128 +138,53 @@ body {
   }
 }
 
-.navbar {
-  height: 70px;
-  border-bottom: 0.5px solid rgb(231, 228, 228);
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  color: #555;
-  font-weight: bold;
-  text-align: center;
-  background-color: #212529;
-  color: #868e96;
-  margin-right: 30px;
-
-  .Heder_Loging_button {
-    border: none;
-  }
-
-  .wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    height: 100%;
-    max-width: 1200px;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    .items {
-      display: flex;
-      padding: 20px;
-
-      align-items: center;
-
-      .item {
-        display: flex;
-
-        font-size: 18px;
-        align-items: center;
-
-        .icon {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-}
-.search1 {
-  input {
-    margin: 5px 0px 0px 10px;
-    text-align: center;
-    align-items: center;
-    background-color: #212529;
-  }
-}
-.Hader_Login1 {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0px 0px 0px 0px;
-  width: 180px;
-}
-
 .Login {
-  width: 100%;
-}
-
-.text-lg {
-  text-align: center;
+  text-align: right;
+  width: 100px;
+  border: 1px solid red;
 }
 
 p {
   .Login_input1 {
-
     margin-top: 10px;
-  text-align: center;
+    text-align: left;
     margin-bottom: 20px;
-
-
   }
   .Login_input {
     margin-top: 30px;
 
-  text-align: center;
-    margin-bottom: 20px;
-  
-
-
+    text-align: left;
+    margin-bottom: 30px;
   }
 
   .loginId {
-  text-align: center;
-    margin-top: 10px;
-    background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 40px;
-    border-radius: 5px;
-  border: 1px solid #e6e3e3;
-
+    margin-top: 20px;
+    padding: 20px;
+    height: 50px;
+    border-radius: 4px 4px 0px 0px;
+    border: 1px solid #e6e3e3;
   }
   .loginPw {
-  text-align: center;
-    margin-top: 10px;
-    background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 40px;
-    border-radius: 5px;
-  border: 1px solid #e6e3e3;
-
+    margin-top: 20px;
+    padding: 20px;
+    height: 50px;
+    border-radius: 4px 4px 0px 0px;
+    border: 1px solid #e6e3e3;
   }
 
   .loginBtn {
+    border-color: #9a62e6;
+    background-color: #9a62e6;
+    text-align: center;
+    margin: 30px 0;
     width: 100%;
-    font-size: 14px;
-    padding: 20px 30px;
-    align-items: center;
-    line-height: 1px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    border-style: none;
+    height: 50px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px 5px 5px 5px;
   }
 }
 .modal {
@@ -267,130 +193,57 @@ p {
   }
 }
 
-.socialBox {
-  margin-bottom: 30px;
-  .kakao {
-    background-color: #feec34;
-    border-color: #feec34;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    .kakaoLogo {
-      width: 24px;
-      height: 25px;
-    }
-    .kakaoText {
-      width: 300px;
-      font-size: 15px;
-      text-align: center;
-      display: inline-block;
-      box-sizing: border-box;
-    }
-  }
+.kakao {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 0px;
 }
-
+.facebook {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 0px 0px;
+}
+.Google {
+  display: flex;
+  align-items: center;
+}
+.kakaoLogo {
+  width: 40px;
+  border-radius: 50%;
+}
+.facebookLogo {
+  width: 40px;
+  border-radius: 50%;
+}
+.GoogleLogo {
+  width: 40px;
+  border-radius: 50%;
+}
 .socialBox {
-  margin-bottom: 20px;
-  .Google {
-    background-color: white;
-    height: 40px;
-    display: flex;
-    border: 1px solid #dcdcdc;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    margin-top: 10px;
-
-    .GoogleLogo {
-      width: 24px;
-      height: 25px;
-    }
-    .GoogleText {
-      width: 300px;
-      font-size: 15px;
-      text-align: center;
-      display: inline-block;
-      box-sizing: border-box;
-    }
-  }
-
-  .kakao {
-    background-color: #feec34;
-    border-color: #feec34;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    border-radius: 3px;
-
-    .kakaoLogo {
-      width: 24px;
-      height: 25px;
-    }
-    .kakaoText {
-      width: 300px;
-      font-size: 15px;
-      text-align: center;
-      display: inline-block;
-      box-sizing: border-box;
-    }
-  }
-
-  .facebook {
-    background-color: #3880ce;
-    border-color: #21538a;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    color: #fff;
-    border-radius: 3px;
-    > .facebookText {
-      padding-top: 12px;
-      width: 310px;
-      color: #fff;
-      font-size: 15px;
-      text-align: center;
-      box-sizing: border-box;
-    }
-    .facebookLogo {
-      padding-top: 7px;
-      width: 24px;
-      align-items: center;
-      margin-left: 7px;
-      height: 30px;
-    }
-  }
+  display: flex;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+.socialBox1 {
+  margin: 0 auto;
+  display: flex;
 }
 
 .autoLogin {
   text-align: center;
-  margin-bottom: 20px;
 }
 .loginLine {
   text-align: center;
-  
 }
 .loginLine_end {
   font-size: 14px;
 }
 .LoginNamedaci {
-  width: 100%;
-  flex: 2;
-  font-size: 14px;
-  margin-left: 0px;
+  padding: 0px 0px 0px 80px;
 }
 .navbar_span {
-  font-size: 17px;
-  margin-right: 5px;
+  padding: 0px 0px 0px 80px;
 }
 .menu {
   .flex {
@@ -404,10 +257,11 @@ p {
   }
 }
 .navbarRogo {
-  margin-right: 20px;
-  margin-top: 4px;
+  margin-top: 8px;
+  margin-right: 30px;
 }
 .container {
+  padding: 0px 10px 0px 10px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -500,7 +354,7 @@ p {
   .aaa1 {
     margin-left: auto;
     margin-right: 0;
-  text-align: center;
+    text-align: center;
   }
   div {
     span {
@@ -552,4 +406,93 @@ p {
 
 .navbar_span :hover {
   color: white;
+}
+
+///////////////////////////////
+///
+///
+///
+///
+///
+///
+///
+///
+///
+///
+.navbar {
+  background-color: #212529;
+
+  .wrapper {
+    margin: 0 auto;
+    align-items: center;
+    height: 70px;
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+
+    color: #868e96;
+    max-width: 1800px;
+  }
+}
+
+.Hader_Login1 {
+  display: flex;
+
+  align-items: center;
+
+  .Login1 {
+    width: 100px;
+    text-align: center;
+  }
+  .SignUp {
+  }
+}
+
+.font-bold {
+  font-weight: 700;
+  color: black;
+  text-align: left;
+  font-size: 22px;
+}
+.menu-bar {
+  .flex {
+    a {
+      align-items: center;
+    }
+    li {
+      width: 105px;
+      margin-top: 18px;
+      font-size: 15px;
+      font-weight: bolder;
+      min-height: 20px;
+    }
+    li:hover {
+      font-weight: bolder;
+      color: white;
+    }
+  }
+}
+.search1 {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin: 5px 0px 0px 10px;
+    height: 100%;
+    text-align: center;
+    background-color: #212529;
+    margin-right: 10px;
+  }
+  button {
+    text-align: center;
+  }
+}
+.asdaskjdha {
+  text-align: center;
+}
+.btnasd2 {
+  margin: 0 auto;
+}
+.asdasdasd3424 {
+  text-align: center;
 }

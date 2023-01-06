@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { BACK_URL } from "../../config";
 
-const BoardDetail = ({ lcategory, mcategory, boardList }) => {
+const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
   const { boardid } = useParams();
   const navigate = useNavigate();
   const backnavigate = useNavigate();
@@ -51,10 +51,24 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
     };
     getCommentData();
   }, []);
-
-  const aaa = sessionStorage.getItem("userid") === boardDetail.author;
-
-  const bbb = (ccc) => sessionStorage.getItem("userid") === ccc;
+  let aaa = false;
+  if (
+    sessionStorage.getItem("userid") === boardDetail.author ||
+    sessionStorage.getItem("role") == "ADMIN"
+  ) {
+    aaa = true;
+  }
+  let bbb = false;
+  if (
+    sessionStorage.getItem("userid") === boardDetail.author ||
+    sessionStorage.getItem("role") == "ADMIN"
+  ) {
+    bbb = true;
+  }
+  let ccc = false;
+  if (sessionStorage.getItem("userid") === boardDetail.author) {
+    ccc = true;
+  }
 
   const deleteList = async () => {
     try {
@@ -126,16 +140,21 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
               <span>{boardDetail.date}</span>
               <span>조회수 : </span>
               <span>{boardDetail.views}</span>
-
-              {aaa ? (
-                <>
-                  <div className="Deletebuttonor">
+              <div className="Deletebuttonor">
+                {ccc ? (
+                  <>
                     <a
                       href={`/Board/${lcategory}/${mcategory}/update/
                         ${boardDetail.id}`}
                     >
                       수정
                     </a>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {aaa ? (
+                  <>
                     <button
                       className="DetailPageButton2"
                       onClick={() => {
@@ -144,17 +163,17 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                     >
                       삭제
                     </button>
-                  </div>
-                </>
-              ) : (
-                <></>
-              )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
           </div>
         </div>
 
         <div className="DetailPage_List_cjah_div">
-          <div className="DetailPage_List_cjah">{boardDetail.contents}</div>
+          <p className="DetailPage_List_cjah">{boardDetail.contents}</p>
         </div>
       </div>
       <button
@@ -172,17 +191,18 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
             <div>댓글</div>
           </div>
           <hr className="DetailPageHr" />
-          <tbody className="DetailPage_BoootList">
+          <div className="DetailPage_BoootList">
             {comList.map((list) => (
-              <tr className="DetailPageTd" key={list.id}>
+              <div className="DetailPageTd" key={list.id}>
                 <div className="DetailPageTd_Span1">
                   <span>{list.author} &nbsp;</span>
                   <span>{list.date}</span>
                 </div>
                 <div className="DetailPageTddiv">
                   <div>{list.contents} </div>
+
                   <div>
-                    {bbb(list.author) ? (
+                    {bbb ? (
                       <>
                         <button
                           onClick={() => {
@@ -198,9 +218,10 @@ const BoardDetail = ({ lcategory, mcategory, boardList }) => {
                     )}
                   </div>
                 </div>
-              </tr>
+                <hr className="DetailPageHr" />
+              </div>
             ))}
-          </tbody>
+          </div>
           <div className="DetailPage-div">
             <input
               className="DetailPage-mimee"

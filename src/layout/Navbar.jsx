@@ -17,6 +17,8 @@ const Navbar = () => {
   const [BoardText, setBoardText] = useState("");
   const [deleteListsd, setDeleteListsd] = useState();
   const [serComment, setSerComment] = useState("");
+  const [error, setError] = useState("");
+  const [error1, setError1] = useState("");
 
   const deleteList = async () => {
     const response = await axios.get(
@@ -54,57 +56,50 @@ const Navbar = () => {
     <div className="navbar">
       <div className="wrapper">
         <div class="menu-bar">
-          <div class="top-bar">
-            <div class="con flex flex-jc-sb height-100p">
-              <a href="#" class="logo top-bar__logo img-box flex flex-ai-c"></a>
-              <nav class="menu menu__menu-1">
-                <ul class="flex ">
-                  <a href="/">
-                    <img
-                      src="https://i.ibb.co/M9ZDk5c/zz.png"
-                      alt="zz"
-                      border="0"
-                      class="navbarRogo"
-                    />
-                  </a>
-                  <li>
-                    <a class="flexs " href="/Board/stock/dsi">
-                      한국 증시
-                    </a>
-                  </li>
+          <ul class="flex ">
+            <a href="/">
+              <img
+                src="https://i.ibb.co/M9ZDk5c/zz.png"
+                alt="zz"
+                border="0"
+                class="navbarRogo"
+              />
+            </a>
+            <li>
+              <a class="flexs " href="/Board/stock/dsi">
+                한국 증시
+              </a>
+            </li>
 
-                  <li>
-                    <a class="flex" href="/Board/stock/osi">
-                      미국 증시
-                    </a>
-                  </li>
+            <li>
+              <a class="flex" href="/Board/stock/osi">
+                미국 증시
+              </a>
+            </li>
 
-                  <li>
-                    <a class="flex" href="/Board/coin/ci">
-                      암호 화폐
-                    </a>
-                  </li>
+            <li>
+              <a class="flex" href="/Board/coin/ci">
+                암호 화폐
+              </a>
+            </li>
 
-                  <li>
-                    <a class="flex" href="/Board/community/fb">
-                      유머&잡담
-                    </a>
-                  </li>
+            <li>
+              <a class="flex" href="/Board/community/fb">
+                유머&잡담
+              </a>
+            </li>
 
-                  <li>
-                    <a class="flex" href="/Board/community/hot">
-                      인기글
-                    </a>
-                  </li>
-                  <li>
-                    <a class="flex" href="/Board/community/pro">
-                      전문가의 방
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+            <li>
+              <a class="flex" href="/Board/community/hot">
+                인기글
+              </a>
+            </li>
+            <li>
+              <a class="flex" href="/Board/community/pro">
+                전문가의 방
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="search1">
           <input
@@ -118,8 +113,7 @@ const Navbar = () => {
           <button
             onClick={() => {
               deleteList();
-            }}
-          >
+            }}>
             <Link>
               <ZoomInIcon />
             </Link>
@@ -134,7 +128,7 @@ const Navbar = () => {
                   <Link to="/Privacy">{check}</Link>
                 </span>
 
-                <span className="navbar_span1">님</span>
+                <span className="navbar_span1"> 님</span>
                 <button
                   className="LoginNamedaci"
                   onClick={() => {
@@ -142,27 +136,19 @@ const Navbar = () => {
 
                     sessionStorage.clear();
                     window.location.reload();
-                  }}
-                >
+                  }}>
                   로그아웃
                 </button>
               </>
             ) : (
               <div className="Hader_Login1">
-                <div className="Login">
+                <div className="Login1">
                   <label for="my-modal-1">로그인</label>
 
                   <input type="checkbox" id="my-modal-1" class="modal-toggle" />
                   <div class="modal">
                     <div class="modal-box relative">
-                      <label
-                        for="my-modal-1"
-                        class="btn-sm absolute right-6 top-9"
-                      >
-                        ✕
-                      </label>
-
-                      <h1 class="text-lg font-bold">로그인 페이지</h1>
+                      <h1 class="font-bold">로그인 페이지</h1>
                       <p class="py-4">
                         <div>
                           <div className="Login_input">
@@ -175,6 +161,10 @@ const Navbar = () => {
                                 setUserId(e.target.value);
                               }}
                             />
+                            {error1 && (
+                              <div style={{ color: "red" }}>{error1}</div>
+                            )}
+                            <br />
                           </div>
                           <div className="Login_input1">
                             비밀번호
@@ -186,83 +176,113 @@ const Navbar = () => {
                                 setPassword(e.target.value);
                               }}
                             />
+                            {error && (
+                              <div style={{ color: "red" }}>{error}</div>
+                            )}
+                            <br />
                           </div>
                           <div className="loginMid"></div>
-                                <label
-                            type="submit"
-                            className="loginBtn"
-                            for="my-modal-1"
-                            onClick={async () => {
-                              const lonned = await axios({
-                                url: `${BACK_URL}account/signIn`,
-                                method: "POST",
-                                data: { userId, password },
-                              });
-
-                              setName(lonned.data.username);
-
-                              setId(lonned.data.userId);
-                              if (lonned.data.aboolean == true) {
-                                setLonned(lonned.data);
-                                setLonned(lonned.data.aboolean);
-                                setTimeout(() => {});
-                                alert("로그인 성공");
-                                window.location.reload();
-                              } else if (lonned.data.aboolean == false) {
-                                setLonned(lonned.data.userName);
-                                alert(
-                                  "입력하신 정보를 다시한번 확인하여주세요."
-                                );
-                              }
-                              console.log(lonned);
-                              sessionStorage.setItem(
-                                "logined",
-                                lonned.data.userName
-                              );
-                              sessionStorage.setItem(
-                                "user",
-                                lonned.data.userName
-                              );
-                              sessionStorage.setItem(
-                                "userid",
-                                lonned.data.userId
-                              );
-                            }}
-                          >
-                            {" "}
-                            로그인{" "}
-                          </label>
-                          <div className="autoLogin">아이디/비밀번호 찾기</div>
-                    
                         </div>
+
                         <div className="socialBox">
-                          <div className="kakao">
-                            <img
-                              className="kakaoLogo"
-                              src="https://t1.daumcdn.net/cfile/tistory/99DD44345F33780309"
-                            />
-                            <div className="kakaoText">
-                              <a href="">카카오 계정으로 신규가입</a>
+                          <div className="socialBox1">
+                            <div className="kakao">
+                              <a href="">
+                                <img
+                                  className="kakaoLogo"
+                                  src="https://t1.daumcdn.net/cfile/tistory/99DD44345F33780309"
+                                />
+                              </a>
+                              <div className="kakaoText"></div>
                             </div>
-                          </div>
-                          <div className="facebook">
-                            <img
-                              className="facebookLogo"
-                              src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202110facebooklogosocialsocialmedia-115707_115594.png"
-                            />
-                            <div className="facebookText">
-                              <a href="">페이스북 계정으로 신규가입</a>
+                            <div className="facebook">
+                              <a href="">
+                                <img
+                                  className="facebookLogo"
+                                  src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202110facebooklogosocialsocialmedia-115707_115594.png"
+                                />
+                              </a>
+                              <div className="facebookText"></div>
                             </div>
+                            <a href="">
+                              <div className="Google">
+                                <img
+                                  className="GoogleLogo"
+                                  src="http://asq.kr/y7pd84Th"
+                                />
+                                <div className="GoogleText"></div>
+                              </div>
+                            </a>
                           </div>
-                          <div className="Google">
-                            <img
-                              className="GoogleLogo"
-                              src="http://asq.kr/y7pd84Th"
-                            />
-                            <div className="GoogleText">
-                              <a href="">구글 계정으로 신규가입</a>
-                            </div>
-                          </div>
+                        </div>
+                        <div className="asdaskjdha">
+                          SNS계정으로 간편 로그인
+                        </div>
+                        <button
+                          type="submit"
+                          className="loginBtn"
+                          for="my-modal-1"
+                          onClick={async () => {
+                            const lonned = await axios({
+                              url: `${BACK_URL}account/signIn`,
+                              method: "POST",
+                              data: { userId, password },
+                            });
+
+                            setName(lonned.data.username);
+
+                            setId(lonned.data.userId);
+                            if (
+                              !userId ||
+                              userId.length < 5 ||
+                              userId.length > 12
+                            ) {
+                              // userid is invalid
+
+                              setError1("아이디는 5~12자 이내로 입력해주세요.");
+
+                              return;
+                            }
+                            if (password.length < 8) {
+                              setError("비밀번호가 8자 이상으로 입력해주세요");
+
+                              return;
+                            }
+
+                            if (lonned.data.aboolean == true) {
+                              setLonned(lonned.data);
+                              setLonned(lonned.data.aboolean);
+                              setTimeout(() => {});
+                              alert("로그인 성공");
+                            } else if (lonned.data.aboolean == false) {
+                              setLonned(lonned.data.userName);
+                              alert("입력하신 정보를 다시한번 확인하여주세요.");
+                              sessionStorage.clear();
+                            }
+                            setError("");
+                            setError1("");
+
+                            console.log(lonned);
+                            sessionStorage.setItem(
+                              "logined",
+                              lonned.data.userName
+                            );
+                            sessionStorage.setItem(
+                              "user",
+                              lonned.data.userName
+                            );
+                            sessionStorage.setItem(
+                              "userid",
+                              lonned.data.userId
+                            );
+                          }}>
+                          {" "}
+                          로그인{" "}
+                        </button>
+                        <div className="asdasdasd3424">
+                          <label for="my-modal-1" class="btnasd2">
+                            나가기
+                          </label>
                         </div>
                       </p>
                     </div>
