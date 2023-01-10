@@ -13,6 +13,18 @@ const Sidbar = () => {
   const [boardList, setBoardList] = useState([]);
   const [samsung, setSamsung] = useState("");
   const [kakao, setKakao] = useState("");
+  const images = [
+    "https://i.ibb.co/ydHv4vh/9246251720993146233.png",
+    "https://ifh.cc/g/77SxR1.jpg",
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((currentIndex + 1) % images.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, images.length]);
 
   const fetchUsers = async () => {
     try {
@@ -99,14 +111,12 @@ const Sidbar = () => {
           <div className="bloc-tabs">
             <button
               className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(1)}
-            >
+              onClick={() => toggleTab(1)}>
               코인
             </button>
             <button
               className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(2)}
-            >
+              onClick={() => toggleTab(2)}>
               증시
             </button>
           </div>
@@ -115,8 +125,7 @@ const Sidbar = () => {
             <div
               className={
                 toggleState === 1 ? "content  active-content" : "content"
-              }
-            >
+              }>
               <div class="aaaaaaa">
                 <div class="img_box">
                   <img
@@ -140,8 +149,7 @@ const Sidbar = () => {
                         test[0].signed_change_price > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }
-                    >
+                      }>
                       {test[0].signed_change_price
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
@@ -152,8 +160,7 @@ const Sidbar = () => {
                         test[0].signed_change_rate > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }
-                    >
+                      }>
                       {(test[0].signed_change_rate.toFixed(3) * 100).toFixed(2)}
                       %
                     </span>
@@ -186,8 +193,7 @@ const Sidbar = () => {
                           test[1].signed_change_price > 0
                             ? { color: "red" }
                             : { color: "blue" }
-                        }
-                      >
+                        }>
                         {test[1].signed_change_price
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -198,8 +204,7 @@ const Sidbar = () => {
                           test[1].signed_change_rate > 0
                             ? { color: "red" }
                             : { color: "blue" }
-                        }
-                      >
+                        }>
                         {(test[1].signed_change_rate.toFixed(3) * 100).toFixed(
                           2
                         )}
@@ -233,8 +238,7 @@ const Sidbar = () => {
                         test[2].signed_change_price > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }
-                    >
+                      }>
                       {test[2].signed_change_price
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -245,8 +249,7 @@ const Sidbar = () => {
                         test[2].signed_change_rate > 0
                           ? { color: "red" }
                           : { color: "blue" }
-                      }
-                    >
+                      }>
                       {(test[2].signed_change_rate.toFixed(3) * 100).toFixed(2)}
                       %
                     </span>
@@ -258,8 +261,7 @@ const Sidbar = () => {
             <div
               className={
                 toggleState === 2 ? "content  active-content" : "content"
-              }
-            >
+              }>
               <div class="tbl_type">
                 <div class="aaaaaaa">
                   <div class="img_box">
@@ -275,8 +277,7 @@ const Sidbar = () => {
                       <span
                         style={
                           kospi.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }
-                      >
+                        }>
                         {kospi.avg.toFixed(2)} %
                       </span>
                     </div>
@@ -304,8 +305,7 @@ const Sidbar = () => {
                             kosdaq.avg > 0
                               ? { color: "red" }
                               : { color: "blue" }
-                          }
-                        >
+                          }>
                           {kosdaq.avg.toFixed(2)} %
                         </span>
                       </div>
@@ -336,8 +336,7 @@ const Sidbar = () => {
                       <span
                         style={
                           samsung.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }
-                      >
+                        }>
                         {samsung.avg} %
                       </span>
                     </div>
@@ -377,8 +376,7 @@ const Sidbar = () => {
                       <span
                         style={
                           kakao.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }
-                      >
+                        }>
                         {kakao.avg} %
                       </span>
                     </div>
@@ -434,11 +432,9 @@ const Sidbar = () => {
         </div>
       </div>
       <div className="advertisement">
-        <img
-          src="https://i.ibb.co/ydHv4vh/9246251720993146233.png"
-          alt="9246251720993146233"
-          border="0"
-        />
+        <div>
+          <img src={images[currentIndex]} alt="slider" className="imfasdask" />
+        </div>
       </div>
     </div>
   );

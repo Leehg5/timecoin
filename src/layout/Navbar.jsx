@@ -66,36 +66,36 @@ const Navbar = () => {
               />
             </a>
             <li>
-              <a class="flexs " href="/Board/stock/dsi">
+              <a class="flex1 " href="/Board/stock/dsi">
                 한국 증시
               </a>
             </li>
 
             <li>
-              <a class="flex" href="/Board/stock/osi">
+              <a class="flex1" href="/Board/stock/osi">
                 미국 증시
               </a>
             </li>
 
             <li>
-              <a class="flex" href="/Board/coin/ci">
+              <a class="flex1" href="/Board/coin/ci">
                 암호 화폐
               </a>
             </li>
 
             <li>
-              <a class="flex" href="/Board/community/fb">
+              <a class="flex1" href="/Board/community/fb">
                 유머&잡담
               </a>
             </li>
 
             <li>
-              <a class="flex" href="/Board/community/hot">
+              <a class="flex1" href="/Board/community/hot">
                 인기글
               </a>
             </li>
             <li>
-              <a class="flex" href="/Board/community/pro">
+              <a class="flex1" href="/Board/community/pro">
                 전문가의 방
               </a>
             </li>
@@ -143,7 +143,9 @@ const Navbar = () => {
             ) : (
               <div className="Hader_Login1">
                 <div className="Login1">
-                  <label for="my-modal-1">로그인</label>
+                  <label for="my-modal-1" className="sadasdar34">
+                    로그인
+                  </label>
 
                   <input type="checkbox" id="my-modal-1" class="modal-toggle" />
                   <div class="modal">

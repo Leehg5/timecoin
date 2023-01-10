@@ -112,6 +112,7 @@ body {
   padding: 30px;
 }
 .footer_maindav {
+  border: 1px solid red;
   width: 100%;
   margin-top: 60px;
   background-color: white;
@@ -240,10 +241,24 @@ p {
   font-size: 14px;
 }
 .LoginNamedaci {
-  padding: 0px 0px 0px 80px;
+  margin-top: 4px;
+  text-align: end;
 }
+.navbar_span1 {
+  width: 20px;
+  margin-right: 20px;
+  text-align: center;
+  margin-top: 4px;
+}
+
 .navbar_span {
-  padding: 0px 0px 0px 80px;
+  color: #7d1fe0;
+  font-size: 18px;
+  width: 90px;
+  text-align: center;
+}
+.LoginNamedaci:hover {
+  color: white;
 }
 .menu {
   .flex {
@@ -423,6 +438,7 @@ p {
   background-color: #212529;
 
   .wrapper {
+    text-align: center;
     margin: 0 auto;
     align-items: center;
     height: 70px;
@@ -439,10 +455,13 @@ p {
   display: flex;
 
   align-items: center;
-
+  margin-top: 3px;
   .Login1 {
     width: 100px;
     text-align: center;
+    .sadasdar34:hover {
+      color: white;
+    }
   }
   .SignUp {
   }
@@ -456,14 +475,12 @@ p {
 }
 .menu-bar {
   .flex {
-    a {
-      align-items: center;
-    }
     li {
-      width: 105px;
+      width: 100px;
+      text-align: center;
+      width: 100px;
       margin-top: 18px;
       font-size: 15px;
-      font-weight: bolder;
       min-height: 20px;
     }
     li:hover {
@@ -495,4 +512,8 @@ p {
 }
 .asdasdasd3424 {
   text-align: center;
+}
+.imfasdask {
+  width: 100%;
+  height: 220px;
 }
