@@ -29,6 +29,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
             id: boardid,
           },
         });
+
         setboardDetail(data.data);
       } catch (e) {
         console.log(e);
@@ -44,6 +45,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
             id: boardid,
           },
         });
+        console.log(boardDetail.author);
         setComList(data.data);
       } catch (e) {
         console.log(e);
@@ -145,8 +147,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
                   <>
                     <a
                       href={`/Board/${lcategory}/${mcategory}/update/
-                        ${boardDetail.id}`}
-                    >
+                        ${boardDetail.id}`}>
                       수정
                     </a>
                   </>
@@ -159,8 +160,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
                       className="DetailPageButton2"
                       onClick={() => {
                         deleteList();
-                      }}
-                    >
+                      }}>
                       삭제
                     </button>
                   </>
@@ -181,8 +181,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
         type="button"
         onClick={() => {
           backnavigate(-1);
-        }}
-      >
+        }}>
         <ArrowBackIcon className="icon" /> &nbsp; 목록으로
       </button>
       <div className="DetailPageList1">
@@ -207,8 +206,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
                         <button
                           onClick={() => {
                             comdelete(list.id);
-                          }}
-                        >
+                          }}>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </button>
@@ -238,8 +236,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
               className="DetailPage_button1"
               onClick={() => {
                 compost();
-              }}
-            >
+              }}>
               등록
             </button>
           </div>

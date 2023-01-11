@@ -39,6 +39,7 @@ const Navbar = () => {
           test2: response2.data,
         },
       });
+      console.log(lonned);
     } else if (response.data == false && response2.data == false) {
       alert("입력하신 정보가 없습니다");
     }
@@ -285,6 +286,7 @@ const Navbar = () => {
                               "userid",
                               lonned.data.userId
                             );
+                            sessionStorage.setItem("role", lonned.data.role);
                           }}>
                           {" "}
                           로그인{" "}

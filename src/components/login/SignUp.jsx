@@ -232,6 +232,7 @@ const SignUp = () => {
                   setError1("");
                   setError2("");
                   registerd();
+
                   console.log(userId, password, userName, confirmPassword);
                 }}>
                 회원 가입하기
