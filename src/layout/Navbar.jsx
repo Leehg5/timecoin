@@ -234,6 +234,14 @@ const Navbar = () => {
                             setName(lonned.data.username);
 
                             setId(lonned.data.userId);
+                            if (!userId || !userId) {
+                              // userid is invalid
+
+                              setError1("아이디는 5~12자 이내로 입력해주세요.");
+                              setError("비밀번호가 8자 이상으로 입력해주세요");
+
+                              return;
+                            }
                             if (
                               !userId ||
                               userId.length < 5 ||
