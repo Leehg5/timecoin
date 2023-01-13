@@ -190,7 +190,7 @@ const Navbar = () => {
                               <a href="">
                                 <img
                                   className="kakaoLogo"
-                                  src="https://t1.daumcdn.net/cfile/tistory/99DD44345F33780309"
+                                  src="https://ifh.cc/g/kQKZkD.png"
                                 />
                               </a>
                               <div className="kakaoText"></div>
@@ -199,7 +199,7 @@ const Navbar = () => {
                               <a href="">
                                 <img
                                   className="facebookLogo"
-                                  src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202110facebooklogosocialsocialmedia-115707_115594.png"
+                                  src="https://ifh.cc/g/dMb9h7.png"
                                 />
                               </a>
                               <div className="facebookText"></div>
@@ -208,7 +208,7 @@ const Navbar = () => {
                               <div className="Google">
                                 <img
                                   className="GoogleLogo"
-                                  src="http://asq.kr/y7pd84Th"
+                                  src="https://ifh.cc/g/Lg7R0R.png"
                                 />
                                 <div className="GoogleText"></div>
                               </div>

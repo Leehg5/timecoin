@@ -248,7 +248,7 @@ const SignUp = () => {
                 회원 가입하기
               </button>
             </div>
-            <label className="SignUpBtn1" for="my-modal">
+            <label className="SignUpBtn11dasd" for="my-modal">
               나가기
             </label>
           </p>
