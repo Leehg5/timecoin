@@ -125,6 +125,13 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
     });
     window.location.reload();
   };
+  const a = boardDetail.date;
+
+  let b = "";
+
+  if (a) {
+    b = a.replace(/(\d{4})(\d{2})(\d{2})/g, "$1-$2-$3");
+  }
   const boardTitle = {
     "stock/dsi": "한국 증시",
     "stock/osi": "미국 증시",
@@ -159,7 +166,7 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
             <div className="Detail">
               <div>
                 <span>{boardDetail.author}</span>
-                <span>{boardDetail.date}</span>
+                <span>{b}</span>
               </div>
               <div> 조회 {boardDetail.views}</div>
             </div>
@@ -211,7 +218,9 @@ const BoardDetail = ({ lcategory, mcategory, boardList, setBoardList }) => {
               <div className="DetailPageTd" key={list.id}>
                 <div className="DetailPageTd_Span1">
                   <span>{list.author} &nbsp;</span>
-                  <span>{list.date}</span>
+                  <span>
+                    {list.date.replace(/(\d{4})(\d{2})(\d{2})/g, "$1-$2-$3")}
+                  </span>
                 </div>
                 <div className="DetailPageTddiv">
                   <div>{list.contents} </div>
