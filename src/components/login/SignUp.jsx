@@ -12,6 +12,7 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [error1, setError1] = useState("");
   const [error2, setError2] = useState("");
+  const [inputText, setInputText] = useState("");
 
   const [checkedItems, setCheckedItems] = useState({
     fruit1: false,
@@ -61,6 +62,11 @@ const SignUp = () => {
       });
   };
 
+  const handleOnKeyPress = (e) => {
+    if (e.key === "Enter") {
+      registerd(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
   return (
     <div className="SignUp">
       <label for="my-modal" class="SignUplable">
@@ -83,6 +89,7 @@ const SignUp = () => {
                   placeholder="이름 or 닉네임 을 입력해주세요"
                   value={userName}
                   onChange={(event) => setUserName(event.target.value)}
+                  onKeyPress={handleOnKeyPress}
                 />
               </div>
 
@@ -98,6 +105,7 @@ const SignUp = () => {
                   placeholder="아이디를 입력해주세요"
                   value={userId}
                   onChange={(event) => setUserId(event.target.value)}
+                  onKeyPress={handleOnKeyPress}
                 />
               </div>
 
@@ -113,6 +121,7 @@ const SignUp = () => {
                   placeholder="비밀번호를 입력하세요"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
+                  onKeyPress={handleOnKeyPress}
                 />
               </div>
               <br />
@@ -125,6 +134,7 @@ const SignUp = () => {
                   placeholder="비밀번호를 재 입력하세요"
                   value={confirmPassword}
                   onChange={(event) => setConfirmPassword(event.target.value)}
+                  onKeyPress={handleOnKeyPress}
                 />
               </div>
               {error && <div style={{ color: "red" }}>{error}</div>}

@@ -40,18 +40,19 @@ const BoardPost = ({ lcategory, mcategory }) => {
       setAuthor(sessionStorage.getItem("userid"));
     }
   }, []);
+
   return (
     <div className="select-MainDiv">
-        <button
-          type="button"
-          onClick={() => {
-            navigate(-1);
-          }}>
-          <h1>
-            <ArrowBackIcon className="icon" />
-            &nbsp; 돌아가기
-          </h1>
-        </button>
+      <button
+        type="button"
+        onClick={() => {
+          navigate(-1);
+        }}>
+        <h1>
+          <ArrowBackIcon className="icon" />
+          &nbsp; 돌아가기
+        </h1>
+      </button>
       <div class="con">
         <div class="article-write">
           <form>

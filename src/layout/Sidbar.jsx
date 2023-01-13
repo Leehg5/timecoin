@@ -112,12 +112,12 @@ const Sidbar = () => {
             <button
               className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
               onClick={() => toggleTab(1)}>
-              코인
+              증시
             </button>
             <button
               className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
               onClick={() => toggleTab(2)}>
-              증시
+              코인
             </button>
           </div>
 
@@ -126,169 +126,8 @@ const Sidbar = () => {
               className={
                 toggleState === 1 ? "content  active-content" : "content"
               }>
-              <div class="aaaaaaa">
-                <div class="img_box">
-                  <img
-                    class="logo_img"
-                    src="https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg"
-                  />
-                </div>
-                <span class="first_name">BTC</span>
-                <div class="aaa1">
-                  <div>
-                    <span>
-                      {test[0].opening_price
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                      원{" "}
-                    </span>
-                  </div>
-                  <div>
-                    <span
-                      style={
-                        test[0].signed_change_price > 0
-                          ? { color: "red" }
-                          : { color: "blue" }
-                      }>
-                      {test[0].signed_change_price
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                      원{" "}
-                    </span>
-                    <span
-                      style={
-                        test[0].signed_change_rate > 0
-                          ? { color: "red" }
-                          : { color: "blue" }
-                      }>
-                      {(test[0].signed_change_rate.toFixed(3) * 100).toFixed(2)}
-                      %
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="border_line"></div>
-              <div>
-                <div class="aaaaaaa">
-                  <div class="img_box">
-                    <img
-                      class="logo_img"
-                      src="https://s3-symbol-logo.tradingview.com/crypto/XTVCETH.svg"
-                    />
-                  </div>
-                  <span class="first_name">ETH</span>
-                  <div class="aaa1">
-                    <div>
-                      <span>
-                        {test[1].opening_price
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                        원
-                      </span>
-                    </div>
-                    <div>
-                      <span
-                        style={
-                          test[1].signed_change_price > 0
-                            ? { color: "red" }
-                            : { color: "blue" }
-                        }>
-                        {test[1].signed_change_price
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                        원
-                      </span>
-                      <span
-                        style={
-                          test[1].signed_change_rate > 0
-                            ? { color: "red" }
-                            : { color: "blue" }
-                        }>
-                        {(test[1].signed_change_rate.toFixed(3) * 100).toFixed(
-                          2
-                        )}
-                        %
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="border_line"></div>
-              <div class="aaaaaaa">
-                <div class="img_box">
-                  <img
-                    class="logo_img"
-                    src="https://static.upbit.com/logos/XRP.png"
-                  />
-                </div>
-                <span class="first_name">XRP</span>
-                <div class="aaa1">
-                  <div>
-                    <span>
-                      {test[2].opening_price
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      원
-                    </span>
-                  </div>
-                  <div>
-                    <span
-                      style={
-                        test[2].signed_change_price > 0
-                          ? { color: "red" }
-                          : { color: "blue" }
-                      }>
-                      {test[2].signed_change_price
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      원
-                    </span>
-                    <span
-                      style={
-                        test[2].signed_change_rate > 0
-                          ? { color: "red" }
-                          : { color: "blue" }
-                      }>
-                      {(test[2].signed_change_rate.toFixed(3) * 100).toFixed(2)}
-                      %
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="border_line"></div>
-            </div>
-            <div
-              className={
-                toggleState === 2 ? "content  active-content" : "content"
-              }>
-              <div class="tbl_type">
-                <div class="aaaaaaa">
-                  <div class="img_box">
-                    <img
-                      class="logo_img"
-                      src="https://s3-symbol-logo.tradingview.com/country/KR.svg"
-                    />
-                  </div>
-                  <span class="first_name">코스피</span>
-                  <div class="aaa1">
-                    <div>
-                      <span>{kospi.value}</span>
-                      <span
-                        style={
-                          kospi.avg > 0 ? { color: "red" } : { color: "blue" }
-                        }>
-                        {kospi.avg.toFixed(2)} %
-                      </span>
-                    </div>
-                    <div>
-                      <span class="span_high">{kospi.high}</span>
-                      <span class="span_low">{kospi.low}</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="border_line"></div>
-                <div>
+              <div class="border_line">
+                <div class="tbl_type">
                   <div class="aaaaaaa">
                     <div class="img_box">
                       <img
@@ -296,22 +135,230 @@ const Sidbar = () => {
                         src="https://s3-symbol-logo.tradingview.com/country/KR.svg"
                       />
                     </div>
-                    <span class="first_name">코스닥</span>
+                    <span class="first_name">코스피</span>
                     <div class="aaa1">
-                      <div>
-                        <span>{kosdaq.value}</span>
-                        <span
+                      <div className="adasfj3">
+                        <div>{kospi.value}</div>
+                        <div
                           style={
-                            kosdaq.avg > 0
+                            kospi.avg > 0 ? { color: "red" } : { color: "blue" }
+                          }>
+                          {kospi.avg.toFixed(2)} %
+                        </div>
+                      </div>
+
+                      <div className="adasfj3">
+                        <div class="span_high">{kospi.high}</div>
+                        <div class="span_low">{kospi.low}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border_line"></div>
+                  <div>
+                    <div class="aaaaaaa">
+                      <div class="img_box">
+                        <img
+                          class="logo_img"
+                          src="https://s3-symbol-logo.tradingview.com/country/KR.svg"
+                        />
+                      </div>
+                      <span class="first_name">코스닥</span>
+                      <div class="aaa1">
+                        <div className="adasfj3">
+                          <div>{kosdaq.value}</div>
+                          <div
+                            style={
+                              kosdaq.avg > 0
+                                ? { color: "red" }
+                                : { color: "blue" }
+                            }>
+                            {kosdaq.avg.toFixed(2)} %
+                          </div>
+                        </div>
+                        <div className="adasfj3">
+                          <div class="span_high">{kosdaq.high}</div>
+                          <div class="span_low">{kosdaq.low}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border_line"></div>
+                  <div class="aaaaaaa">
+                    <div class="img_box">
+                      <img
+                        class="logo_img_sam"
+                        src="https://www.samsung.com/sec/static/_images/common/logo_samsung_black.svg"
+                      />
+                    </div>
+                    <span class="first_name">삼성증권</span>
+                    <div class="aaa1">
+                      <div className="adasfj3">
+                        <div>
+                          {samsung.value
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                          원
+                        </div>
+                        <div
+                          style={
+                            samsung.avg > 0
                               ? { color: "red" }
                               : { color: "blue" }
                           }>
-                          {kosdaq.avg.toFixed(2)} %
+                          {samsung.avg} %
+                        </div>
+                      </div>
+                      <div className="adasfj3">
+                        <div class="span_high">
+                          {samsung.high
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          원
+                        </div>
+                        <div class="span_low">
+                          {samsung.low
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          원
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border_line"></div>
+                  <div class="aaaaaaa">
+                    <div class="img_box">
+                      <img
+                        class="logo_img_kakao"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAZCAMAAACsCjhdAAAAYFBMVEX/////ygD/ywD/yQD/zAD/yAD/9d3/45j/78X/+u7//fn/+Ob/8cz/xgD/6a7/5Z//8tP/11v/67b/0C7/0j7/34T/7Lz/1E3/zhv/2m7/3Xz/4Yz/+/P/2GH/2Wf/1EfAVPLxAAACIklEQVQ4je2V2W6rMBCGmcUk2GC2sJP0/d/y2B6znaiRKvWyvgCJGX+z/TZJ8qur7+wHq7ZT/gNYAbcP1lTR/QcwhR9hAH+w72Fm/2SqVL/BDnNapdeA6W7bYEZNgdDXQABUZ1dYU5T+pe3DWQHmPfCT3MJOX2Ajkw+QFkBjy8iozzBDPPq3VQBji4gPYfWE1A4jIGcnWM0k6pyb1ScCOJ9hI4Ok+rr7IB1CE2O0PoU7SiyBlQDlpREz8gn2RKou5hafkgKskiGA3WAV4evinPQY3AT2FipZsHXPlbjb6PwVYStye3VOKgh1BZgLNf1nLkPi+SGcjinCHszr7pc1t67rXrzDNIeocRm7OPPAHmYRNlVYpMzDykpxfTSLSLlFOywv4dD1WqtghgArAyGsJnB9ZjfArfYJsDRau/kcZdZI/d54brz5hpIZHZltsOSFJLdaRij78lPPXHdJRN9D3C09c1PahnxDpTdpOPdKvEG/wzKn4fUY4g4zhNuUhyA0gWmUHrlYAjuX6aUjouw22CIybOWzwwIuOyxJxT0lDPWWwGdYYinMyHXG17vOFAbgT1MQzeoqWw9Y0hD78/ZgeHZPUMMV5g/QHArAqRtIiTTc7AHHpZyQ5XYv1BIzV/40ru5WIDXahIsAK1SU5aB8e1J2N4p65O7XsU+R3I5WBmHMpte4K20aX0oWxqaNiVebjnOrmj4L2+KuJLelvV5wv7L+AdvxGDZuaoGFAAAAAElFTkSuQmCC"
+                      />
+                    </div>
+                    <span class="first_name">카카오</span>
+                    <div class="aaa1">
+                      <div className="adasfj3">
+                        <div>
+                          {kakao.value
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          원
+                        </div>
+                        <div
+                          style={
+                            kakao.avg > 0 ? { color: "red" } : { color: "blue" }
+                          }>
+                          {kakao.avg} %
+                        </div>
+                      </div>
+                      <div className="adasfj3">
+                        <div class="span_high">
+                          {kakao.high
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          원
+                        </div>
+                        <div class="span_low">
+                          {kakao.low
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          원
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="content-tabs">
+              <div
+                className={
+                  toggleState === 2 ? "content  active-content" : "content"
+                }>
+                <div class="aaaaaaa">
+                  <div class="img_box">
+                    <img
+                      class="logo_img"
+                      src="https://s3-symbol-logo.tradingview.com/crypto/XTVCBTC.svg"
+                    />
+                  </div>
+                  <span class="first_name">BTC</span>
+                  <div class="aaa1">
+                    <div>
+                      <span>
+                        {test[0].opening_price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                        원{" "}
+                      </span>
+                    </div>
+                    <div className="adasfj3">
+                      <div
+                        style={
+                          test[0].signed_change_price > 0
+                            ? { color: "red" }
+                            : { color: "blue" }
+                        }>
+                        {test[0].signed_change_price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                        원{" "}
+                      </div>
+                      <div
+                        style={
+                          test[0].signed_change_rate > 0
+                            ? { color: "red" }
+                            : { color: "blue" }
+                        }>
+                        {(test[0].signed_change_rate.toFixed(3) * 100).toFixed(
+                          2
+                        )}
+                        %
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border_line"></div>
+                <div>
+                  <div class="aaaaaaa">
+                    <div class="img_box">
+                      <img
+                        class="logo_img"
+                        src="https://s3-symbol-logo.tradingview.com/crypto/XTVCETH.svg"
+                      />
+                    </div>
+                    <span class="first_name">ETH</span>
+                    <div class="aaa1">
+                      <div>
+                        <span>
+                          {test[1].opening_price
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                          원
                         </span>
                       </div>
-                      <div>
-                        <span class="span_high">{kosdaq.high}</span>
-                        <span class="span_low">{kosdaq.low}</span>
+                      <div className="adasfj3">
+                        <div
+                          style={
+                            test[1].signed_change_price > 0
+                              ? { color: "red" }
+                              : { color: "blue" }
+                          }>
+                          {test[1].signed_change_price
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                          원
+                        </div>
+                        <div
+                          style={
+                            test[1].signed_change_rate > 0
+                              ? { color: "red" }
+                              : { color: "blue" }
+                          }>
+                          {(
+                            test[1].signed_change_rate.toFixed(3) * 100
+                          ).toFixed(2)}
+                          %
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -320,79 +367,43 @@ const Sidbar = () => {
                 <div class="aaaaaaa">
                   <div class="img_box">
                     <img
-                      class="logo_img_sam"
-                      src="https://www.samsung.com/sec/static/_images/common/logo_samsung_black.svg"
+                      class="logo_img"
+                      src="https://static.upbit.com/logos/XRP.png"
                     />
                   </div>
-                  <span class="first_name">삼성증권</span>
+                  <span class="first_name">XRP</span>
                   <div class="aaa1">
                     <div>
                       <span>
-                        {samsung.value
+                        {test[2].opening_price
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         원
                       </span>
-                      <span
+                    </div>
+                    <div className="adasfj3">
+                      <div
                         style={
-                          samsung.avg > 0 ? { color: "red" } : { color: "blue" }
+                          test[2].signed_change_price > 0
+                            ? { color: "red" }
+                            : { color: "blue" }
                         }>
-                        {samsung.avg} %
-                      </span>
-                    </div>
-                    <div>
-                      <span class="span_high">
-                        {samsung.high
+                        {test[2].signed_change_price
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         원
-                      </span>
-                      <span class="span_low">
-                        {samsung.low
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        원
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="border_line"></div>
-                <div class="aaaaaaa">
-                  <div class="img_box">
-                    <img
-                      class="logo_img_kakao"
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAZCAMAAACsCjhdAAAAYFBMVEX/////ygD/ywD/yQD/zAD/yAD/9d3/45j/78X/+u7//fn/+Ob/8cz/xgD/6a7/5Z//8tP/11v/67b/0C7/0j7/34T/7Lz/1E3/zhv/2m7/3Xz/4Yz/+/P/2GH/2Wf/1EfAVPLxAAACIklEQVQ4je2V2W6rMBCGmcUk2GC2sJP0/d/y2B6znaiRKvWyvgCJGX+z/TZJ8qur7+wHq7ZT/gNYAbcP1lTR/QcwhR9hAH+w72Fm/2SqVL/BDnNapdeA6W7bYEZNgdDXQABUZ1dYU5T+pe3DWQHmPfCT3MJOX2Ajkw+QFkBjy8iozzBDPPq3VQBji4gPYfWE1A4jIGcnWM0k6pyb1ScCOJ9hI4Ok+rr7IB1CE2O0PoU7SiyBlQDlpREz8gn2RKou5hafkgKskiGA3WAV4evinPQY3AT2FipZsHXPlbjb6PwVYStye3VOKgh1BZgLNf1nLkPi+SGcjinCHszr7pc1t67rXrzDNIeocRm7OPPAHmYRNlVYpMzDykpxfTSLSLlFOywv4dD1WqtghgArAyGsJnB9ZjfArfYJsDRau/kcZdZI/d54brz5hpIZHZltsOSFJLdaRij78lPPXHdJRN9D3C09c1PahnxDpTdpOPdKvEG/wzKn4fUY4g4zhNuUhyA0gWmUHrlYAjuX6aUjouw22CIybOWzwwIuOyxJxT0lDPWWwGdYYinMyHXG17vOFAbgT1MQzeoqWw9Y0hD78/ZgeHZPUMMV5g/QHArAqRtIiTTc7AHHpZyQ5XYv1BIzV/40ru5WIDXahIsAK1SU5aB8e1J2N4p65O7XsU+R3I5WBmHMpte4K20aX0oWxqaNiVebjnOrmj4L2+KuJLelvV5wv7L+AdvxGDZuaoGFAAAAAElFTkSuQmCC"
-                    />
-                  </div>
-                  <span class="first_name">카카오</span>
-                  <div class="aaa1">
-                    <div>
-                      <span>
-                        {kakao.value
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        원
-                      </span>
-                      <span
+                      </div>
+                      <div
                         style={
-                          kakao.avg > 0 ? { color: "red" } : { color: "blue" }
+                          test[2].signed_change_rate > 0
+                            ? { color: "red" }
+                            : { color: "blue" }
                         }>
-                        {kakao.avg} %
-                      </span>
-                    </div>
-                    <div>
-                      <span class="span_high">
-                        {kakao.high
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        원
-                      </span>
-                      <span class="span_low">
-                        {kakao.low
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        원
-                      </span>
+                        {(test[2].signed_change_rate.toFixed(3) * 100).toFixed(
+                          2
+                        )}
+                        %
+                      </div>
                     </div>
                   </div>
                 </div>

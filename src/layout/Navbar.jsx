@@ -5,6 +5,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { recoilPersist } from "recoil-persist";
 import SignUp from "../components/login/SignUp";
 import { BACK_URL } from "../config";
+import SearchIcon from "@mui/icons-material/Search";
+
 const Navbar = () => {
   const [lonned, setLonned] = useState(false);
   const [userId, setUserId] = useState();
@@ -19,6 +21,7 @@ const Navbar = () => {
   const [serComment, setSerComment] = useState("");
   const [error, setError] = useState("");
   const [error1, setError1] = useState("");
+  const aaa = useState("");
 
   const deleteList = async () => {
     const response = await axios.get(
@@ -53,11 +56,23 @@ const Navbar = () => {
     }
   }, []);
 
+  const handleOnKeyPress1 = (e) => {
+    if (e.key === "Enter") {
+      deleteList(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
+
+  const handleOnKeyPress = (e) => {
+    if (e.key === "Enter") {
+      lonned(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
+
   return (
     <div className="navbar">
       <div className="wrapper">
-        <div class="menu-bar">
-          <ul class="flex ">
+        <div class="menubar1">
+          <ul class="navbarul ">
             <a href="/">
               <img
                 src="https://i.ibb.co/M9ZDk5c/zz.png"
@@ -102,34 +117,16 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="search1">
-          <input
-            placeholder="검색어를 입력해주세요"
-            type="value"
-            onChange={(e) => {
-              setGggg(e.target.value);
-            }}
-          />
-
-          <button
-            onClick={() => {
-              deleteList();
-            }}>
-            <Link>
-              <ZoomInIcon />
-            </Link>
-          </button>
-        </div>
 
         <div className="items">
           <div className="Hader_Login1">
             {lonned ? (
               <>
-                <span className="navbar_span">
+                <div className="navbar_span">
                   <Link to="/Privacy">{check}</Link>
-                </span>
+                </div>
 
-                <span className="navbar_span1"> 님</span>
+                <div className="navbar_span1"> 님</div>
                 <button
                   className="LoginNamedaci"
                   onClick={() => {
@@ -304,6 +301,23 @@ const Navbar = () => {
                 <SignUp />
               </div>
             )}{" "}
+          </div>
+          <div className="search1">
+            <input
+              placeholder="검색어를 입력해주세요"
+              type="value"
+              onKeyPress={handleOnKeyPress1}
+              onChange={(e) => {
+                setGggg(e.target.value);
+              }}></input>
+            <button
+              onClick={() => {
+                deleteList();
+              }}>
+              <Link>
+                <SearchIcon className="idnasla" />
+              </Link>
+            </button>
           </div>
         </div>
       </div>

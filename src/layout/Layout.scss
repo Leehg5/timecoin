@@ -2,11 +2,10 @@
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
-  width: 100%;
+
   .Layoutsson {
     border: 1px solid rgb(236, 234, 234);
     height: 100vh;
-    width: 0%;
   }
   .asdasd {
     width: 300px;
@@ -14,8 +13,9 @@
     margin: 30px;
   }
   .Sidbar {
-    width: 100%;
+    width: 300px;
     .Sidbarss {
+      border-radius: 5px;
       box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 100px 10px;
     }
     .Sidbarss1 {
@@ -34,16 +34,18 @@
       }
     }
     .Sidbarbanner {
-      width: 100%;
       margin-bottom: 20px;
       margin-right: 10px;
       color: #9a62e6;
+      width: 300px;
+
       img {
-        width: 100%;
+        width: 300px;
+        border-radius: 5px;
       }
     }
     .SidbarNotice {
-      border-radius: 5px 5px 5px 5px;
+      border-radius: 5px;
       box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 100px 10px;
       background-color: white;
       margin-bottom: 20px;
@@ -99,7 +101,8 @@
     .advertisement {
       box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px;
       img {
-        width: 100%;
+        border-radius: 5px;
+        width: 300px;
       }
     }
   }
@@ -108,16 +111,13 @@ body {
   background-color: #fafafa;
 }
 .Contents {
-  width: 70%;
   padding: 30px;
 }
 .footer_maindav {
-  border: 1px solid red;
-  width: 100%;
   margin-top: 60px;
   background-color: white;
   height: 60px;
-  width: 100%;
+
   line-height: 60px;
   color: rgb(160, 160, 160);
   border-top: 1px solid #dee5e7;
@@ -125,7 +125,6 @@ body {
 
   .footer_div11 {
     margin-left: 0%;
-    width: 100%;
     text-align: center;
     align-items: center;
 
@@ -142,11 +141,11 @@ body {
 .Login {
   text-align: right;
   width: 100px;
-  border: 1px solid red;
 }
 
 p {
   .Login_input1 {
+    color: rgb(133, 132, 132);
     margin-top: 10px;
     text-align: left;
     margin-bottom: 20px;
@@ -154,6 +153,7 @@ p {
   .Login_input {
     margin-top: 30px;
 
+    color: rgb(133, 132, 132);
     text-align: left;
     margin-bottom: 30px;
   }
@@ -241,42 +241,19 @@ p {
   font-size: 14px;
 }
 .LoginNamedaci {
-  margin-top: 4px;
   text-align: end;
 }
-.navbar_span1 {
-  width: 20px;
-  margin-right: 20px;
-  text-align: center;
-  margin-top: 4px;
-}
 
-.navbar_span {
-  color: #7d1fe0;
-  font-size: 18px;
-  width: 90px;
-  text-align: center;
-}
 .LoginNamedaci:hover {
   color: white;
 }
-.menu {
-  .flex {
-    li {
-      a {
-      }
-      a:hover {
-        color: white;
-      }
-    }
-  }
-}
+
 .navbarRogo {
-  margin-top: 8px;
-  margin-right: 30px;
+  text-align: end;
+  width: 120px;
 }
 .container {
-  padding: 0px 10px 0px 10px;
+  padding: 0px 20px 0px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -312,8 +289,7 @@ p {
 
 .content {
   background: white;
-  width: 100%;
-  height: 100%;
+
   display: none;
 }
 .content h2 {
@@ -326,36 +302,18 @@ p {
   margin-bottom: 5px;
 }
 .content p {
-  width: 100%;
   height: 300px;
 }
 .active-content {
   display: block;
 }
-.cointable {
-  thead {
-    tr {
-      font-size: 13px;
-      th:nth-child(1) {
-        width: 20%;
-      }
-      th:nth-child(2) {
-        width: 20%;
-      }
-      th:nth-child(3) {
-        width: 20%;
-      }
-      th:nth-child(4) {
-        width: 20%;
-      }
-    }
-  }
-}
+
 .ssdmjvnslkeuh3 {
   height: 500px;
 }
 
 .aaaaaaa {
+  height: 50px;
   display: flex;
   align-items: center;
   font-size: 12px;
@@ -363,18 +321,27 @@ p {
   color: #868e96;
 
   .first_name {
-    width: 50px;
     white-space: nowrap;
   }
   .aaa1 {
     margin-left: auto;
     margin-right: 0;
-    text-align: center;
-  }
-  div {
-    span {
-      padding: 0 5px;
+    text-align: end;
+
+    div {
+      span {
+      }
     }
+  }
+  .adasfj3 {
+    display: flex;
+    div:nth-child(1) {
+      width: 100px;
+    }
+    div:nth-child(2) {
+      width: 60px;
+    }
+
     .span_high {
       color: red;
     }
@@ -383,23 +350,25 @@ p {
     }
   }
   .img_box {
-    width: 50px;
-    height: 50px;
+    margin-right: 10px;
+    width: 40px;
+
     .logo_img {
       border-radius: 50%;
-      width: 70%;
+      width: 40px;
+
       margin: 0 auto;
       margin-top: 5px;
     }
+
     .logo_img_sam {
-      width: 80%;
       margin: 0 auto;
-      margin-top: 22px;
+
+      width: 40px;
     }
     .logo_img_kakao {
-      width: 80%;
       margin: 0 auto;
-      margin-top: 18px;
+      width: 40px;
     }
   }
 }
@@ -413,7 +382,6 @@ p {
   font-weight: bold;
 }
 .Newsimgdiv {
-  width: 100%;
   a:nth-child(1) {
     margin-top: 10px;
   }
@@ -434,36 +402,44 @@ p {
 ///
 ///
 ///
-.navbar {
-  background-color: #212529;
 
-  .wrapper {
-    text-align: center;
-    margin: 0 auto;
-    align-items: center;
-    height: 70px;
-    font-size: 14px;
-    color: #555;
-    font-weight: bold;
+.navbar_span1 {
+  width: 30px;
+  height: 100%;
 
-    color: #868e96;
-    max-width: 1800px;
+  text-align: center;
+  a {
+    height: 100%;
   }
+}
+.LoginNamedaci {
+  height: 100%;
+  text-align: end;
+  width: 70px;
+}
+.navbar_span {
+  width: 145px;
+
+  text-align: end;
 }
 
 .Hader_Login1 {
   display: flex;
 
-  align-items: center;
-  margin-top: 3px;
   .Login1 {
-    width: 100px;
-    text-align: center;
+    text-align: end;
+
+    color: #e5e7eb;
+    width: 170px;
+    font-size: 15px;
     .sadasdar34:hover {
       color: white;
+      font-weight: bold;
     }
   }
   .SignUp {
+    text-align: end;
+    width: 75px;
   }
 }
 
@@ -473,47 +449,82 @@ p {
   text-align: left;
   font-size: 22px;
 }
-.menu-bar {
-  .flex {
-    li {
-      width: 100px;
-      text-align: center;
-      width: 100px;
-      margin-top: 18px;
-      font-size: 15px;
-      min-height: 20px;
-    }
-    li:hover {
-      font-weight: bolder;
-      color: white;
-    }
-  }
-}
-.search1 {
-  display: flex;
-  align-items: center;
 
-  input {
-    margin: 5px 0px 0px 10px;
-    height: 100%;
-    text-align: center;
-    background-color: #212529;
-    margin-right: 10px;
-  }
-  button {
-    text-align: center;
-  }
-}
 .asdaskjdha {
+  color: rgb(133, 132, 132);
   text-align: center;
 }
 .btnasd2 {
   margin: 0 auto;
 }
 .asdasdasd3424 {
+  color: rgb(133, 132, 132);
+  font-weight: bold;
   text-align: center;
 }
 .imfasdask {
-  width: 100%;
   height: 220px;
+}
+
+.navbar {
+  width: 100%;
+
+  display: flex;
+  text-align: center;
+  background-color: #212529;
+
+  .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    height: 70px;
+    font-size: 14px;
+    color: rgb(212, 211, 211);
+    font-weight: bold;
+  }
+}
+.menubar1 {
+  width: 930px;
+
+  .navbarul {
+    display: flex;
+    margin-top: 30px;
+    li {
+      width: 100px;
+      text-align: center;
+
+      margin-top: 18px;
+      font-size: 15px;
+      min-height: 20px;
+    }
+    li:hover {
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
+
+.search1 {
+  background-color: white;
+  border-radius: 50px 50px;
+  display: flex;
+  margin-top: 7px;
+  margin-bottom: 20px;
+  input {
+    color: black;
+    text-align: start;
+    padding: 5px 0px 5px 20px;
+    width: 200px;
+    border-radius: 50px 50px;
+  }
+  button {
+  }
+}
+.idnasla {
+  color: black;
+}
+.items {
+  width: 250px;
+  margin-top: 10px;
 }
