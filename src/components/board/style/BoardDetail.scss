@@ -35,12 +35,15 @@
   margin-bottom: 10px;
   .DetailPagelistdiv {
     width: 100%;
+    span {
+    }
   }
   .asddgiuhi23 {
     display: flex;
     margin-top: 10px;
     width: 100%;
-    span:nth-child(1) {
+    div:nth-child(1) {
+      width: 90px;
       color: #868e96;
 
       font-size: 12px;
