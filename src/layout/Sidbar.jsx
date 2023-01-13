@@ -190,7 +190,7 @@ const Sidbar = () => {
                         src="https://www.samsung.com/sec/static/_images/common/logo_samsung_black.svg"
                       />
                     </div>
-                    <span class="first_name">삼성증권</span>
+                    <span class="first_name">삼성전자</span>
                     <div class="aaa1">
                       <div className="adasfj3">
                         <div>
