@@ -15,7 +15,7 @@
   .Sidbar {
     width: 300px;
     .Sidbarss {
-      height: 360px;
+      height: 350px;
       border-radius: 5px;
       box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 100px 10px;
     }
@@ -57,7 +57,6 @@
         font-weight: 600;
       }
       div:nth-child(1) {
-        font-weight: bold;
         padding: 10px 0px 10px 20px;
         border-bottom: 1px solid rgb(231, 231, 229);
       }
@@ -333,33 +332,32 @@ p {
       margin-top: 3px;
       font-weight: bold;
       color: black;
-      font-size: 15px;
+
+      font-size: 13px;
     }
     .adasfj3 {
       margin-bottom: 3px;
       display: flex;
+      font-size: 13px;
 
       .asdasddj3 {
-        font-size: 13px;
+        font-size: 12px;
         margin-left: auto;
       }
       .span_high {
-        font-size: 14px;
+        font-size: 12px;
         color: red;
       }
       .span_low {
-        font-size: 14px;
+        font-size: 12px;
 
         color: blue;
       }
       div:nth-child(1) {
-        font-size: 14px;
-        width: 60px;
+        font-size: 12px;
+        width: 50px;
       }
     }
-  }
-  div {
-    font-size: 14px;
   }
 }
 .border_line {
@@ -452,6 +450,7 @@ p {
 }
 .imfasdask {
   height: 220px;
+  object-fit: cover;
 }
 
 .navbar {
@@ -520,12 +519,17 @@ p {
   margin-top: 10px;
 }
 .adasfj3 {
-  font-size: 14px;
+  font-size: 13px;
 }
 .asdasddj33 {
-  font-size: 14px;
+  font-size: 12px;
 }
 .asdasddj333 {
   margin-left: auto;
-  font-size: 14px;
+  font-size: 12px;
+}
+.asdjeo2p {
+  font-size: 12px;
+
+  margin-bottom: 5px;
 }

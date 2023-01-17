@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import "./Layout.scss";
 import { BACK_URL } from "../config";
 const Sidbar = () => {
@@ -145,6 +147,13 @@ const Sidbar = () => {
                           style={
                             kospi.avg > 0 ? { color: "red" } : { color: "blue" }
                           }>
+                          <span>
+                            {kospi.avg > 0 ? (
+                              <ArrowDropUpIcon />
+                            ) : (
+                              <ArrowDropDownIcon />
+                            )}
+                          </span>
                           {kospi.avg.toFixed(2)} %
                         </div>
                       </div>
@@ -176,6 +185,13 @@ const Sidbar = () => {
                                 ? { color: "red" }
                                 : { color: "blue" }
                             }>
+                            <span>
+                              {kosdaq.avg > 0 ? (
+                                <ArrowDropUpIcon />
+                              ) : (
+                                <ArrowDropDownIcon />
+                              )}
+                            </span>
                             {kosdaq.avg.toFixed(2)} %
                           </div>
                         </div>
@@ -210,6 +226,13 @@ const Sidbar = () => {
                               ? { color: "red" }
                               : { color: "blue" }
                           }>
+                          <span>
+                            {samsung.avg > 0 ? (
+                              <ArrowDropUpIcon />
+                            ) : (
+                              <ArrowDropDownIcon />
+                            )}
+                          </span>
                           {samsung.avg.toFixed(2)} %
                         </div>
                       </div>
@@ -249,6 +272,13 @@ const Sidbar = () => {
                           style={
                             kakao.avg > 0 ? { color: "red" } : { color: "blue" }
                           }>
+                          <span>
+                            {kakao.avg > 0 ? (
+                              <ArrowDropUpIcon />
+                            ) : (
+                              <ArrowDropDownIcon />
+                            )}
+                          </span>
                           {parseFloat(kakao.avg).toFixed(2)} %
                         </div>
                       </div>
@@ -288,7 +318,7 @@ const Sidbar = () => {
                       <div class="aaa1">
                         <div class="first_name">BTC</div>
                         <div>
-                          <div>
+                          <div className="asdjeo2p">
                             {test[0].opening_price
                               .toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
@@ -313,6 +343,13 @@ const Sidbar = () => {
                                 ? { color: "red" }
                                 : { color: "blue" }
                             }>
+                            <span>
+                              {test[0].signed_change_rate > 0 ? (
+                                <ArrowDropUpIcon />
+                              ) : (
+                                <ArrowDropDownIcon />
+                              )}
+                            </span>
                             {(
                               test[0].signed_change_rate.toFixed(3) * 100
                             ).toFixed(2)}
@@ -335,7 +372,7 @@ const Sidbar = () => {
                         <div class="aaa1">
                           <div class="first_name">ETH</div>
                           <div>
-                            <div>
+                            <div className="asdjeo2p">
                               {test[1].opening_price
                                 .toString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -360,6 +397,13 @@ const Sidbar = () => {
                                   ? { color: "red" }
                                   : { color: "blue" }
                               }>
+                              <span>
+                                {test[1].signed_change_rate > 0 ? (
+                                  <ArrowDropUpIcon />
+                                ) : (
+                                  <ArrowDropDownIcon />
+                                )}
+                              </span>
                               {(
                                 test[1].signed_change_rate.toFixed(3) * 100
                               ).toFixed(2)}
@@ -381,7 +425,7 @@ const Sidbar = () => {
                       <div class="aaa1">
                         <div class="first_name">XRP</div>
                         <div>
-                          <div>
+                          <div className="asdjeo2p">
                             {test[2].opening_price
                               .toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -406,6 +450,13 @@ const Sidbar = () => {
                                 ? { color: "red" }
                                 : { color: "blue" }
                             }>
+                            <span>
+                              {test[2].signed_change_rate > 0 ? (
+                                <ArrowDropUpIcon />
+                              ) : (
+                                <ArrowDropDownIcon />
+                              )}
+                            </span>
                             {(
                               test[2].signed_change_rate.toFixed(3) * 100
                             ).toFixed(2)}
