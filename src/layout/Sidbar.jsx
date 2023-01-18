@@ -154,7 +154,7 @@ const Sidbar = () => {
                               <ArrowDropDownIcon />
                             )}
                           </span>
-                          {kospi.avg.toFixed(2)} %
+                          {parseFloat(kospi.avg).toFixed(2)} %
                         </div>
                       </div>
 
@@ -192,7 +192,7 @@ const Sidbar = () => {
                                 <ArrowDropDownIcon />
                               )}
                             </span>
-                            {kosdaq.avg.toFixed(2)} %
+                            {parseFloat(kosdaq.avg).toFixed(2)} %{" "}
                           </div>
                         </div>
                         <div className="adasfj3">
